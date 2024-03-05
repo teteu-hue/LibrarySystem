@@ -4,7 +4,9 @@ require ("Book/Book.php");
 
 $genderBook = [
     new GenderBook("Romance"),
-    new GenderBook("Drama")
+    new GenderBook("Drama"),
+    new GenderBook("Terror"),
+    new GenderBook("Fantasia")
 ];
 
 $books = [
@@ -20,7 +22,9 @@ $books = [
     new Book("As crônicas de Nárcia, Princípe Caspian", $genderBook[3], 35, 650),
     new Book("As crônicas de Nárcia, O Cavalo e seu Menino", $genderBook[3], 35, 650),
     new Book("As crônicas de Nárcia, A Cadeira de Prata", $genderBook[3], 35, 650),
-    new Book("As crônicas de Nárcia, O Leão a Feiticeira e o Guarda roupa", $genderBook[3], 35, 650)
+    new Book("As crônicas de Nárcia, O Leão a Feiticeira e o Guarda roupa", $genderBook[3], 35, 650),
+    new Book("Coraline e o Mundo Secreto", $genderBook[2], 35, 650),
+    new Book("As Crônicas de Spiderwick", $genderBook[3], 35, 650),
 ];
 
 ?>

@@ -1,6 +1,6 @@
 <?php
 
-require("../Address/Address.php");
+require("Address/Address.php");
 
 Class Biblioteca
 {
@@ -33,6 +33,16 @@ Class Biblioteca
     public function setAddress($address)
     {
         $this->address = $address;
+    }
+    
+    public function getBookById($idBook)
+    {
+        for($i = 0; $i > count($this->books); $i++){
+            echo $this->books[$i]->getNameBook();
+            if($this->books[$i]->getIdBook() == $idBook){
+                return $this->books[$i]->getInfoBook();
+            }
+        }
     }
 }
 

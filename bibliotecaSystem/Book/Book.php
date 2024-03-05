@@ -4,6 +4,8 @@ require("GenderBook.php");
 
 Class Book extends Notebook
 {
+    private static int $idSum = 0;
+    private int $idBook;
     private string $nameBook;
     private GenderBook $genderBook;
     private float $price;
@@ -14,6 +16,13 @@ Class Book extends Notebook
         $this->genderBook = $genderBook;
         $this->price = $price;
         $this->numPage = $numPage;
+        $this->idBook = ++Book::$idSum;
+    }
+
+    /* GETTERS AND SETTERS */
+
+    public function getIdBook(){
+        return $this->idBook;
     }
 
     public function getNameBook()
@@ -49,6 +58,14 @@ Class Book extends Notebook
     public function setNumPage($numPage)
     {
         $this->numPage = $numPage;
+    }
+
+    /* GETTERS AND SETTER */
+
+    public function getInfoBook(){
+        echo "The Id is: " . $this->getIdBook() . "\n";
+        echo "The Name of Book is: " . $this->getNameBook() . "\n";
+        echo "The Gender of Book is: " . $this->getGenderBook() . "\n";
     }
 }
 
