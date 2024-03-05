@@ -67,16 +67,8 @@ Class Book extends Notebook
         echo "The Id is: " . $this->getIdBook() . "\n";
         echo "The Name of Book is: " . $this->getNameBook() . "\n";
         echo "The Gender of Book is: " . $this->getGenderBook() . "\n";
-    }
-
-    public static function getBookById($idBook, array $books)
-    {
-        for($i = 0; $i > count($books); $i++){
-            echo $books[$i]->getNameBook();
-            if($books[$i]->getIdBook() == $idBook){
-                return $books[$i]->getInfoBook();
-            }
-        }
+        echo "-----------------------------";
+        echo "\n\n";
     }
 }
 

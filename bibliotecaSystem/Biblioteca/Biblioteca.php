@@ -20,6 +20,10 @@ Class Biblioteca
         return $this->name;
     }
 
+    public function getBooks(){
+        return $this->books;
+    }
+
     public function setName($name)
     {
         $this->name = $name;
@@ -35,14 +39,19 @@ Class Biblioteca
         $this->address = $address;
     }
     
+    public function showBooks()
+    {
+        for($i = 0; $i < count($this->books); $i++){
+            echo $this->books[$i]->getInfoBook();
+        }
+    }
+
     public function getBookById($idBook)
     {
-
-        for($i = 0; $i > count($this->books); $i++){
-            echo $this->books[$i]->getNameBook();
-            // if($this->books[$i]->getIdBook() === $idBook){
-            //     return $this->books[$i]->getInfoBook();
-            // }
+        for($i = 0; $i < count($this->books); $i++){
+            if($this->books[$i]->getIdBook() == $idBook){
+                return $this->books[$i]->getInfoBook();
+            }
         }
     }
 }
