@@ -6,7 +6,7 @@ Class Address
     private int $houseNumber;
     private string $complement;
 
-    public function __construct($street, $houseNumber, ?string $complement = null)
+    public function __construct($street, $houseNumber, ?string $complement)
     {
         $this->street = $street;
         $this->houseNumber = $houseNumber;
