@@ -37,11 +37,12 @@ Class Biblioteca
     
     public function getBookById($idBook)
     {
+
         for($i = 0; $i > count($this->books); $i++){
             echo $this->books[$i]->getNameBook();
-            if($this->books[$i]->getIdBook() == $idBook){
-                return $this->books[$i]->getInfoBook();
-            }
+            // if($this->books[$i]->getIdBook() === $idBook){
+            //     return $this->books[$i]->getInfoBook();
+            // }
         }
     }
 }

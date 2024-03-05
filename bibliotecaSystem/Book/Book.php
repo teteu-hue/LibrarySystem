@@ -21,7 +21,7 @@ Class Book extends Notebook
 
     /* GETTERS AND SETTERS */
 
-    public function getIdBook(){
+    public function getIdBook() : int {
         return $this->idBook;
     }
 
@@ -62,10 +62,21 @@ Class Book extends Notebook
 
     /* GETTERS AND SETTER */
 
-    public function getInfoBook(){
+    public function getInfoBook() : void
+    {
         echo "The Id is: " . $this->getIdBook() . "\n";
         echo "The Name of Book is: " . $this->getNameBook() . "\n";
         echo "The Gender of Book is: " . $this->getGenderBook() . "\n";
+    }
+
+    public static function getBookById($idBook, array $books)
+    {
+        for($i = 0; $i > count($books); $i++){
+            echo $books[$i]->getNameBook();
+            if($books[$i]->getIdBook() == $idBook){
+                return $books[$i]->getInfoBook();
+            }
+        }
     }
 }
 
