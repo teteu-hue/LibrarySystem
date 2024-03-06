@@ -54,6 +54,11 @@ Class Biblioteca
             }
         }
     }
+
+    public function insertBook(Book $book){
+        array_push($this->books, $book);
+        return "Sucessed!";
+    }
 }
 
 ?>
