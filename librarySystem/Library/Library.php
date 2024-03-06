@@ -8,7 +8,7 @@ Class Library
     private Address $address;
     private array $books;
 
-    public function __construct($name, $address, $books)
+    public function __construct($name, Address $address, $books)
     {
         $this->name = $name;
         $this->address = $address;
@@ -34,7 +34,7 @@ Class Library
         return $this->address;
     }
 
-    public function setAddress($address)
+    public function setAddress(Address $address)
     {
         $this->address = $address;
     }
