@@ -67,8 +67,7 @@ Class Book extends Notebook
         echo "The Id is: " . $this->getIdBook() . "\n";
         echo "The Name of Book is: " . $this->getNameBook() . "\n";
         echo "The Gender of Book is: " . $this->getGenderBook() . "\n";
-        echo "-----------------------------";
-        echo "\n\n";
+        echo "<br>";
     }
 }
 

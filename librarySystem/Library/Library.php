@@ -42,7 +42,7 @@ Class Library
     public function showBooks()
     {
         for($i = 0; $i < count($this->books); $i++){
-            echo $this->books[$i]->getInfoBook();
+            echo $this->books[$i]->getInfoBook() . "<br>";
         }
     }
 
