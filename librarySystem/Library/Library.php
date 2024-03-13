@@ -1,6 +1,8 @@
 <?php
 
 require("Address/Address.php");
+require "database/books.php";
+
 
 Class Library
 {
@@ -48,6 +50,7 @@ Class Library
 
     public function getBookById($idBook)
     {
+ 
         for($i = 0; $i < count($this->books); $i++){
             if($this->books[$i]->getIdBook() == $idBook){
                 return $this->books[$i]->getInfoBook();
@@ -58,6 +61,13 @@ Class Library
     public function insertBook(Book $book){
         array_push($this->books, $book);
         return "Sucessed!";
+    }
+
+    public function getAllGenders()
+    {
+        for($i = 0; $i < count($genderBooks); $i++){
+            echo $genderBooks[$i]->getName();
+        }
     }
 }
 

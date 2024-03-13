@@ -7,7 +7,6 @@
     <title>Document</title>
     <?php
     require("Notebook/Notebook.php");
-    require("database/books.php");
     require("Library/Library.php");
     ?>
 </head>
@@ -15,31 +14,33 @@
 
 <?php
 
-//$address = new Address("Av José Bonifácio", 540, "Prédio Educacional");
-//$library = new Library("ETEC JK", $address, $books);
+$address = new Address("Av José Bonifácio", 540, "Prédio Educacional");
+$library = new Library("ETEC JK", $address, $books);
 //$library->showBooks();
 ?>
 
 <form action="acao.php" method="post">
     <pre>
-        <label for="">Nome</label>
-        <input type="text" name="nome" id="">
+        <label for="">Nome do Livro</label>
+        <input type="text" name="nameBook" id="">
 
-        <label for="">Telefone</label>
-        <input type="tel" name="telefone" id="">
+        <label for=""></label>
+        <input type="text">
 
-        <button type="submit">Enviar</button> <button type="reset">Limpar</button>
-    </pre>
+        <select name="" size=<?php count($genderBooks);?> id="">
+            <option value=<?php  ?>>
+                
+            <?php echo $library->getAllGenders() ?>
 
-</form>
+            </option>
+        </select>
 
-<form action="acao.php" method="post">
-    <pre>
-        <label for="">Endereço</label>
-        <input type="text" name="endereco" id="">
+        
+        <label for=""></label>
+        <input type="number" name="price">
 
-        <label for="">Email</label>
-        <input type="email" name="email" id="">
+        <label for=""></label>
+        <input type="text">
 
         <button type="submit">Enviar</button> <button type="reset">Limpar</button>
     </pre>
