@@ -1,7 +1,6 @@
 <?php
 
-require("Notebook/Notebook.php");
-require("GenderBook.php");
+include "Book/GenderBook.php";
 
 Class Book extends Notebook
 {

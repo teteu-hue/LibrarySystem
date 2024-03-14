@@ -1,8 +1,5 @@
 <?php
 
-require("Database/books.php");
-require("Address/Address.php");
-
 Class Library
 {
     private string $name;

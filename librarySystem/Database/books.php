@@ -1,7 +1,5 @@
 <?php
 
-require ("Book/Book.php");
-
 $genderBooks = [
     new GenderBook("Romance"),
     new GenderBook("Drama"),
@@ -27,3 +25,4 @@ $books = [
     new Book("As Crônicas de Spiderwick", $genderBooks[3], 35, 650),
 ];
 
+?>
