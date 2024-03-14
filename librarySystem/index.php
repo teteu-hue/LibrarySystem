@@ -8,39 +8,40 @@
     <?php
     require("Notebook/Notebook.php");
     require("Library/Library.php");
+    require("Database/books.php");
     ?>
 </head>
-<body>
-
 <?php
 
-$address = new Address("Av José Bonifácio", 540, "Prédio Educacional");
-$library = new Library("ETEC JK", $address, $books);
+// $address = new Address("Av José Bonifácio", 540, "Prédio Educacional");
+// $library = new Library("ETEC JK", $address, $books);
 //$library->showBooks();
 ?>
+
+<body>
 
 <form action="acao.php" method="post">
     <pre>
         <label for="">Nome do Livro</label>
         <input type="text" name="nameBook" id="">
 
-        <label for=""></label>
-        <input type="text">
-
-        <select name="" size=<?php count($genderBooks);?> id="">
-            <option value=<?php  ?>>
+        <select name="genderBook" size=<?php count($genderBooks);?> id="">          
+        <?php for($i = 0; $i < count($genderBooks); $i++){ ?>
                 
-            <?php echo $library->getAllGenders() ?>
+                <option value="<?php echo $genderBooks[$i]->getName()?>">
+                    <?php echo $genderBooks[$i]->getName()?>
+                </option>
 
-            </option>
+        <?php }?>
+
         </select>
 
-        
-        <label for=""></label>
+        <label for="">Preço do Livro</label>
         <input type="number" name="price">
+        
 
-        <label for=""></label>
-        <input type="text">
+        <label for="">Número de Páginas</label>
+        <input type="number">
 
         <button type="submit">Enviar</button> <button type="reset">Limpar</button>
     </pre>

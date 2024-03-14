@@ -9,13 +9,13 @@
     
     <h1>Os dados vieram para cá</h1>
     <?php
-        echo $_POST['nome'];
+        echo $_POST['nameBook'];
         echo "<br>";
-        echo $_POST['telefone'];
+        echo $_POST['price'];
         echo "<br>";
-        echo $_POST['endereco'];
+        echo $_POST['genderBook'];
         echo "<br>";
-        echo $_POST['email'];
+        // echo $_POST['email'];
     ?>
 
 </body>

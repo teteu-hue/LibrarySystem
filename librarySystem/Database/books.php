@@ -27,4 +27,3 @@ $books = [
     new Book("As Crônicas de Spiderwick", $genderBooks[3], 35, 650),
 ];
 
-?>

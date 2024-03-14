@@ -9,7 +9,7 @@ Class Book extends Notebook
     private string $nameBook;
     private GenderBook $genderBook;
     private float $price;
-    private $numPage;
+    private int $numPage;
 
     public function __construct($nameBook, $genderBook, ?float $price, int $numPage){
         $this->nameBook = $nameBook;
