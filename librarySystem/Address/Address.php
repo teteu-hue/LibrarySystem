@@ -45,4 +45,5 @@ Class Address
 
 }
 
+$address = new Address("Av José Bonifácio", 540, "Prédio Educacional");
 ?>

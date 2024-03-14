@@ -1,5 +1,6 @@
 <?php
 
+require("Notebook/Notebook.php");
 require("GenderBook.php");
 
 Class Book extends Notebook
@@ -11,7 +12,7 @@ Class Book extends Notebook
     private float $price;
     private int $numPage;
 
-    public function __construct($nameBook, $genderBook, ?float $price, int $numPage){
+    public function __construct($nameBook, $genderBook, $price, int $numPage){
         $this->nameBook = $nameBook;
         $this->genderBook = $genderBook;
         $this->price = $price;

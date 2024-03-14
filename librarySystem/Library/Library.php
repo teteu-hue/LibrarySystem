@@ -1,5 +1,6 @@
 <?php
 
+require("Database/books.php");
 require("Address/Address.php");
 
 Class Library
@@ -48,7 +49,6 @@ Class Library
 
     public function getBookById($idBook)
     {
- 
         for($i = 0; $i < count($this->books); $i++){
             if($this->books[$i]->getIdBook() == $idBook){
                 return $this->books[$i]->getInfoBook();
@@ -62,4 +62,5 @@ Class Library
     }
 }
 
+$library = new Library("ETEC JK", $address, $books);
 ?>

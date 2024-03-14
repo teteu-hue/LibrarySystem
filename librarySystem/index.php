@@ -6,17 +6,11 @@
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
     <?php
-    require("Notebook/Notebook.php");
-    require("Library/Library.php");
+    
     require("Database/books.php");
+    // require("Library/Library.php");
     ?>
 </head>
-<?php
-
-// $address = new Address("Av José Bonifácio", 540, "Prédio Educacional");
-// $library = new Library("ETEC JK", $address, $books);
-//$library->showBooks();
-?>
 
 <body>
 
@@ -37,11 +31,11 @@
         </select>
 
         <label for="">Preço do Livro</label>
-        <input type="number" name="price">
+        <input type="number" step="0.01" name="price">
         
 
         <label for="">Número de Páginas</label>
-        <input type="number">
+        <input type="number" name="numPage">
 
         <button type="submit">Enviar</button> <button type="reset">Limpar</button>
     </pre>
