@@ -1,9 +1,9 @@
 <?php 
-    require("Address/Address.php");
-    require("Notebook/Notebook.php");
-    require("Book/Book.php");
+    require("model/Address/Address.php");
+    require("model/Notebook/Notebook.php");
+    require("model/Book/Book.php");
     require("Database/books.php");
-    require("Library/Library.php");
+    require("model/Library/Library.php");
 ?>
 
 <?php include "header.php" ?>

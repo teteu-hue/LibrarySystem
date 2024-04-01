@@ -1,6 +1,6 @@
 <?php
 
-include "Book/GenderBook.php";
+include "GenderBook.php";
 
 Class Book extends Notebook
 {
