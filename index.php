@@ -6,6 +6,5 @@
     require("model/Library/Library.php");
 
     include("header.php");
-    include("function.php");
     include("content.php");
     include("footer.php");

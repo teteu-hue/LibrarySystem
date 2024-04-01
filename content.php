@@ -1,14 +1,12 @@
 <form action="acao.php" method="post">
     <pre>
-        <?php msg(); ?>
-
         <label for="">Nome do Livro</label>
         <input type="text" name="nameBook" id="">
 
         <select name="genderBook" size="<?php count($genderBooks)?>" id="">          
             <?php for($i = 0; $i < count($genderBooks); $i++){ ?>
                 
-                <option value="<?php echo $genderBooks[$i]->getName()?>">
+                <option value="<?php echo $genderBooks[$i]->getIdGenderBook()?>">
                     <?php echo $genderBooks[$i]->getName()?>
                 </option>
 

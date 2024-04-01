@@ -13,13 +13,14 @@
     $genderBook;
 
     for($i = 0; $i < count($genderBooks); $i++){
-        if($genderBooks[$i]->getName() == $_POST['genderBook']){
-            $genderBook = $genderBooks[$i]->getName();
+        if($genderBooks[$i]->getIdGenderBook() == $_POST['genderBook']){
+            $genderBook = $genderBooks[$i];
         }
     }
 
     $library->insertBook(new Book($_POST['nameBook'], $genderBook, floatval($_POST['price']), floatval($_POST['numPage'])));
 
+    echo $library->getBookById(16);
     
 
 ?>
