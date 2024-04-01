@@ -64,10 +64,10 @@ Class Book extends Notebook
 
     public function getInfoBook() : void
     {
-        echo "The Id is: " . $this->getIdBook() . "\n";
-        echo "The Name of Book is: " . $this->getNameBook() . "\n";
-        echo "The Gender of Book is: " . $this->getGenderBook() . "\n";
-        echo "<br>";
+        echo "The Id is: " . $this->getIdBook() . "<br>";
+        echo "The Name of Book is: " . $this->getNameBook() . "<br>";
+        echo "The Gender of Book is: " . $this->getGenderBook() . "<br>";
+        echo "The Number of page is: " . $this->getNumPage() . "<br>";
     }
 }
 
