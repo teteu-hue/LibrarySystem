@@ -1,4 +1,6 @@
 <?php 
+    require("controller/Form/Form.php");
+
     require("model/Address/Address.php");
     require("model/Notebook/Notebook.php");
     require("model/Book/Book.php");
@@ -10,9 +12,7 @@
 
 <?php 
 
-    $genderBook = GenderBook::getGenderBookById($_POST['genderBook'], $genderBooks);
-
-    $library->insertBook(new Book($_POST['nameBook'], $genderBook, floatval($_POST['price']), floatval($_POST['numPage'])));
+    Form::addBook($genderBooks, $library);
 
     echo $library->getBookById(16);
     
