@@ -8,7 +8,7 @@
     require("model/Library/Library.php");
 ?>
 
-<?php include "header.php" ?>
+<?php include "view/header.php" ?>
 
 <?php 
 
@@ -24,4 +24,4 @@
 
 ?>
 
-<?php include "footer.php" ?>
+<?php include "view/footer.php" ?>

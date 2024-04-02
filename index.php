@@ -7,6 +7,6 @@
     require("Database/books.php");
     require("model/Library/Library.php");
 
-    include("header.php");
-    include("formCreateBook.php");
-    include("footer.php");
+    include("view/header.php");
+    include("view/Form/formCreateBook.php");
+    include("view/footer.php");
