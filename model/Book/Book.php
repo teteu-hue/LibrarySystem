@@ -10,13 +10,15 @@ Class Book extends Notebook
     private GenderBook $genderBook;
     private float $price;
     private int $numPage;
+    private string $description;
 
-    public function __construct($nameBook, $genderBook, $price, int $numPage){
+    public function __construct($nameBook, $genderBook, $price, int $numPage, $description){
         $this->nameBook = $nameBook;
         $this->genderBook = $genderBook;
         $this->price = $price;
         $this->numPage = $numPage;
         $this->idBook = ++Book::$idSum;
+        $this->description = $description;
     }
 
     /* GETTERS AND SETTERS */
@@ -58,6 +60,14 @@ Class Book extends Notebook
     public function setNumPage($numPage)
     {
         $this->numPage = $numPage;
+    }
+
+    public function getDescription(){
+        return $this->description;
+    }
+
+    public function setDescription($description){
+        $this->description = $description;
     }
 
     /* GETTERS AND SETTER */

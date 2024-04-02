@@ -8,5 +8,5 @@
     require("model/Library/Library.php");
 
     include("view/header.php");
-    include("view/formCreateBook.php");
+    include("view/contentPrincipalPage.php");
     include("view/footer.php");
