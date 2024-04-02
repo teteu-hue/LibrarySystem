@@ -14,6 +14,11 @@
 
     Form::addBook($genderBooks, $library);
 
+    echo $library->getBookById(16)->getInfoBook();
+
+    $library->deleteBook(16);
+    echo "<br>****************<br>";
+
     echo $library->getBookById(16);
     
 

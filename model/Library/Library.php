@@ -48,14 +48,25 @@ Class Library
     {
         for($i = 0; $i < count($this->books); $i++){
             if($this->books[$i]->getIdBook() == $idBook){
-                return $this->books[$i]->getInfoBook();
+                return $this->books[$i];
             }
         }
+        echo "Livro não encontrado!";
     }
 
     public function insertBook(Book $book){
         array_push($this->books, $book);
         return "Sucessed!";
+    }
+
+    public function deleteBook($idBook){
+        $book = $this->getBookById($idBook);
+        $deletedBook = array_search($book, $this->books);
+        if($deletedBook !== false){
+            unset($this->books[$deletedBook]);
+        } else {
+            echo "Elemento não encontrado";
+        }
     }
 }
 
