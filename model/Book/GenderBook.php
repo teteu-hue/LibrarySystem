@@ -21,7 +21,7 @@ Class GenderBook
         return $this->name;
     }
 
-    protected function setName($name)
+    public function setName($name)
     {
         $this-> name = $name;
     }

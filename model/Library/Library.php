@@ -68,6 +68,15 @@ Class Library
             echo "Elemento não encontrado";
         }
     }
+
+    public function editBook($idBook, $nameBook, $genderBook, $price, int $numPage, $description){
+        $book = $this->getBookById($idBook);
+        $book->setNameBook($nameBook);
+        $book->getGenderBook()->setName($genderBook);
+        $book->setPrice($price);
+        $book->setNumPage($numPage);
+        $book->setDescription($description);
+    }
 }
 
 $library = new Library("ETEC JK", $address, $books);

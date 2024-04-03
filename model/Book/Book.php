@@ -39,7 +39,7 @@ Class Book extends Notebook
 
     public function getGenderBook()
     {
-        return $this->genderBook->getName();
+        return $this->genderBook;
     }
 
     public function getPrice()
@@ -76,7 +76,7 @@ Class Book extends Notebook
     {
         echo "The Id is: " . $this->getIdBook() . "<br>";
         echo "The Name of Book is: " . $this->getNameBook() . "<br>";
-        echo "The Gender of Book is: " . $this->getGenderBook() . "<br>";
+        echo "The Gender of Book is: " . $this->getGenderBook()->getName() . "<br>";
         echo "The Number of page is: " . $this->getNumPage() . "<br>";
     }
 }

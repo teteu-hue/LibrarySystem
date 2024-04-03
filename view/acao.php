@@ -18,12 +18,11 @@
 
     echo $library->getBookById(8)->getInfoBook();
 
-    $library->deleteBook(8);
-    echo "<br>****************<br>";
+    echo "<br>****************<br>";    
 
-    echo $library->getBookById(16);
-    
+    $library->editBook(8, "Romance de Cristovão", "Drama", 55, 858, "Nova descrição");
 
+    echo $library->getBookById(8)->getInfoBook();
 ?>
 
 <?php include "$rootDir/view/footer.php" ?>
