@@ -2,6 +2,7 @@
     require("controller/RootDir/RootDir.php");
     $rootDir = RootDir::getRealPath();
     
+    require("$rootDir/model/Layout/Layout.php");
     require("$rootDir/model/Address/Address.php");
     require("$rootDir/model/Notebook/Notebook.php");
     require("$rootDir/model/Book/Book.php");

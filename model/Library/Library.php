@@ -37,13 +37,6 @@ Class Library
         $this->address = $address;
     }
     
-    public function showBooks()
-    {
-        for($i = 0; $i < count($this->books); $i++){
-            echo $this->books[$i]->getInfoBook() . "<br>";
-        }
-    }
-
     public function getBookById($idBook)
     {
         for($i = 0; $i < count($this->books); $i++){
