@@ -1,3 +1,17 @@
+<?php 
+    require_once("../controller/RootDir/RootDir.php");
+
+    $rootDir = RootDir::getRealPath();
+
+    require("$rootDir/model/Address/Address.php");
+    require("$rootDir/model/Notebook/Notebook.php");
+    require("$rootDir/model/Book/Book.php");
+    require("$rootDir/Database/books.php");
+    require("$rootDir/model/Library/Library.php");
+?>
+<?php require("header.php");?>
+
+
 <form action="acao.php" method="post">
     <pre>
         <label for="">Nome do Livro</label>
@@ -26,3 +40,5 @@
     </pre>
 
 </form>
+
+<?php require("footer.php") ?>
