@@ -25,7 +25,7 @@
     <select class="form-select" name="genderBook" size="<?php count($genderBooks)?>" id="">          
             <?php for($i = 0; $i < count($genderBooks); $i++){ ?>
                 
-                <option value="<?php echo $genderBooks[$i]->getIdGenderBook()?>">
+                <option class="option fs-2" value="<?php echo $genderBooks[$i]->getIdGenderBook()?>">
                     <?php echo $genderBooks[$i]->getName()?>
                 </option>
 
