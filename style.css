@@ -1,3 +1,10 @@
 #teste{
     color:red;
 }
+
+.form-label{
+    font-size: 200%;
+}
+.form-control{
+    font-size: 180%;
+}
