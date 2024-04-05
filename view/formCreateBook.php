@@ -12,32 +12,45 @@
 <?php require("header.php");?>
 
 
-<form action="acao.php" method="post">
-    <pre>
-        <label for="">Nome do Livro</label>
-        <input type="text" name="nameBook" id="">
+<form class="row g-3" action="acao.php" method="post">
+    
+  <div class="col-md-6">
+    <label for="inputNameBook" class="form-label">Nome do Livro</label>
+    <input type="text" class="form-control" name="nameBook" id="inputNameBook">
+  </div>
 
-        <select name="genderBook" size="<?php count($genderBooks)?>" id="">          
+
+  <div class="col-md-4">
+    <label for="inputState" class="form-label">Gênero</label>
+    <select class="form-select" name="genderBook" size="<?php count($genderBooks)?>" id="">          
             <?php for($i = 0; $i < count($genderBooks); $i++){ ?>
                 
-                <option value="<?php echo $genderBooks[$i]->getIdGenderBook()?>">
+                <option class="option fs-2" value="<?php echo $genderBooks[$i]->getIdGenderBook()?>">
                     <?php echo $genderBooks[$i]->getName()?>
                 </option>
 
             <?php }?>
 
-        </select>
+    </select>
+  </div>
+      
+  <div class="col-md-6">
+    <label for="inputPrice" class="form-label">Price</label>
+    <input type="number" name="price" class="form-control" id="inputPrice">
+  </div>
 
-        <label for="">Preço do Livro</label>
-        <input type="number" step="0.01" name="price">
-        
-
-        <label for="">Número de Páginas</label>
-        <input type="number" name="numPage">
-
-        <button type="submit">Enviar</button> <button type="reset">Limpar</button>
-
-    </pre>
+  <div class="col-md-6">
+    <label for="inputNumPage" class="form-label">Número de Páginas</label>
+    <input type="text" name="numPage" class="form-control" id="inputNumPage">
+  </div>
+      
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary">Enviar</button>
+    <button type="reset" class="btn btn-danger">Limpar</button>
+  </div>
+  <div class="col-md-6">
+    
+  </div>
 
 </form>
 
