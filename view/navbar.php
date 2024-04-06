@@ -15,6 +15,9 @@
         <li class="nav-item">
           <a class="nav-link" aria-current="page" href="#">Features</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="/LibrarySystem/view/login.php">Login</a>
+        </li>
       </ul>
     </div>
   </div>
