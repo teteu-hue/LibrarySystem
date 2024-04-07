@@ -12,6 +12,10 @@
     $result = $conn->getBookById(5);
     var_dump($result);
 
+    echo "<br>";
+
+    $result1 = $conn->getGenderById(2);
+    var_dump($result1);
 
     include("$rootDir/model/Layout/Layout.php");
     include("$rootDir/view/header.php");

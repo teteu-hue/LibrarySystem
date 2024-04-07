@@ -23,6 +23,19 @@ Class Database{
         }
     }
 
+    public function getGenderById($idGender){
+
+        $sql_search_gender = "SELECT * FROM Genero WHERE id = $idGender";
+
+        $result = $this->conn->query($sql_search_gender);
+        if($result->num_rows > 0){
+            $query = $result->fetch_assoc();
+            return $query;
+        } else {
+            return false;
+        }
+    }
+
 }
 
 $conn = new Database($mysqli);

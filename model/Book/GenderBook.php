@@ -25,17 +25,5 @@ Class GenderBook
     {
         $this-> name = $name;
     }
-
-    public static function getGenderBookById($genderBook, $genderBooks){
-
-        for($i = 0; $i < count($genderBooks); $i++){
-            if($genderBooks[$i]->getIdGenderBook() == $genderBook){
-                return $genderBooks[$i];
-        }
-        }
-    }
 }
-
-
-
 ?>
