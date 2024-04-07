@@ -57,18 +57,24 @@ $sql_insert_livro = "INSERT INTO Livro (nome_livro, id_genero, preco, numeroDePa
     ('Uma Breve História do Tempo', 5, 34.50, 256, 'Explorações no campo da física teórica por Stephen Hawking'),
     ('1987', 3, 34.50, 256, 'Mil novecentos e oitenta e quatro (também publicado como 1984) é um romance distópico do escritor inglês George Orwell. Foi publicado em 8 de junho de 1949 pela Secker & Warburg como o nono e último livro de Orwell concluído em vida. Tematicamente, centra-se nas consequências do totalitarismo, da vigilância em massa e da lavagem cerebral na sociedade')";
 
-if($mysqli->query($sql_insert_genero) === TRUE){
-    echo "Dados inseridos com sucesso!<br>";
-} else {
-    echo "Erro ao inserir os dados no banco de dados! <br>" . $mysqli->error;
-}
+//if($mysqli->query($sql_insert_genero) === TRUE){
+//    echo "Dados inseridos com sucesso!<br>";
+//} else {
+//    echo "Erro ao inserir os dados no banco de dados! <br>" . $mysqli->error;
+//}
+//
+//if($mysqli->query($sql_insert_livro) === TRUE){
+//    echo "Dados inseridos com sucesso. <br>";
+//} else {
+//    echo "Erro ao inserir dados no banco de dados: " . $mysqli->error;
+//}
 
-if($mysqli->query($sql_insert_livro) === TRUE){
-    echo "Dados inseridos com sucesso. <br>";
-} else {
-    echo "Erro ao inserir dados no banco de dados: " . $mysqli->error;
-}
-
-
-$mysqli->close();
-?>
+//$sql_search_book = "SELECT * FROM Livro WHERE id_livro = 22";
+//
+//$result = $mysqli->query($sql_search_book);
+//
+//$query = $result->num_rows;
+//
+//var_dump($result);
+//
+//var_dump($query);

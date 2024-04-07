@@ -2,15 +2,14 @@
 
 Class Library
 {
+
     private string $name;
     private Address $address;
-    private array $books;
 
-    public function __construct($name, Address $address, $books)
+    public function __construct($name, Address $address)
     {
         $this->name = $name;
         $this->address = $address;
-        $this->books = $books;
     }
 
     public function getName()
@@ -39,12 +38,18 @@ Class Library
     
     public function getBookById($idBook)
     {
-        for($i = 0; $i < count($this->books); $i++){
-            if($this->books[$i]->getIdBook() == $idBook){
-                return $this->books[$i];
-            }
+        //var_dump($mysqli);
+
+        $sql_search_book = "SELECT * FROM Livro WHERE id_livro = $idBook";
+
+        $result = $conn->query($sql_search_book);
+        if($result > 0){
+            $query = $result->fetch_assoc();
+            return $query;
+        } else {
+            return false;
         }
-        echo "Livro não encontrado!";
+
     }
 
     public function insertBook(Book $book){
@@ -72,5 +77,5 @@ Class Library
     }
 }
 
-$library = new Library("ETEC JK", $address, $books);
+$library = new Library("ETEC JK", $address);
 ?>

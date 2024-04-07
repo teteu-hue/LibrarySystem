@@ -14,15 +14,15 @@
 
 <?php 
 
-    Form::addBook($genderBooks, $library);
+    //Form::addBook($genderBooks, $library);
 
-    echo $library->getBookById(8)->getInfoBook();
+    //echo $library->getBookById(8)->getInfoBook();
 
-    echo "<br>****************<br>";    
+    //echo "<br>****************<br>";    
 
-    $library->editBook(8, "Romance de Cristovão", "Drama", 55, 858, "Nova descrição");
+    //$library->editBook(8, "Romance de Cristovão", "Drama", 55, 858, "Nova descrição");
 
-    echo $library->getBookById(8)->getInfoBook();
+    //echo $library->getBookById(8)->getInfoBook();
 ?>
 
 <?php include "$rootDir/view/footer.php" ?>
