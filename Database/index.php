@@ -15,18 +15,17 @@ echo "Connected Sucessfully!<br>";
 
 // Criando as tabelas
 $generoQuery = "CREATE TABLE IF NOT EXISTS Genero (
-    id_genero INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
     nome_genero VARCHAR(50) NOT NULL
 );";
 
 $livroQuery = "CREATE TABLE IF NOT EXISTS Livro (
     id_livro INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
     nome_livro VARCHAR(100) NOT NULL,
-    id_genero INT NOT NULL,
+    id_genero INT NOT NULL REFERENCES Genero(id),
     preco DECIMAL(10,2) NOT NULL,
     numeroDePaginas INT NOT NULL,
-    descricao TEXT,
-    FOREIGN KEY (id_genero) REFERENCES genero(id_genero)
+    descricao TEXT
 );";
 
 // Rodando a query no banco de dados
@@ -55,7 +54,8 @@ $sql_insert_livro = "INSERT INTO Livro (nome_livro, id_genero, preco, numeroDePa
     ('O Senhor dos Anéis', 2, 59.90, 1008, 'Uma jornada épica na Terra Média'),
     ('Orgulho e Preconceito', 3, 19.99, 368, 'Um clássico romance de Jane Austen'),
     ('O Código Da Vinci', 4, 39.50, 480, 'Um suspense cheio de mistérios e reviravoltas'),
-    ('Uma Breve História do Tempo', 5, 34.50, 256, 'Explorações no campo da física teórica por Stephen Hawking')";
+    ('Uma Breve História do Tempo', 5, 34.50, 256, 'Explorações no campo da física teórica por Stephen Hawking'),
+    ('1987', 3, 34.50, 256, 'Mil novecentos e oitenta e quatro (também publicado como 1984) é um romance distópico do escritor inglês George Orwell. Foi publicado em 8 de junho de 1949 pela Secker & Warburg como o nono e último livro de Orwell concluído em vida. Tematicamente, centra-se nas consequências do totalitarismo, da vigilância em massa e da lavagem cerebral na sociedade')";
 
 if($mysqli->query($sql_insert_genero) === TRUE){
     echo "Dados inseridos com sucesso!<br>";
