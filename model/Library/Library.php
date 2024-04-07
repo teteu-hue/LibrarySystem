@@ -36,22 +36,6 @@ Class Library
         $this->address = $address;
     }
     
-    public function getBookById($idBook)
-    {
-        //var_dump($mysqli);
-
-        $sql_search_book = "SELECT * FROM Livro WHERE id_livro = $idBook";
-
-        $result = $conn->query($sql_search_book);
-        if($result > 0){
-            $query = $result->fetch_assoc();
-            return $query;
-        } else {
-            return false;
-        }
-
-    }
-
     public function insertBook(Book $book){
         array_push($this->books, $book);
         return "Sucessed!";
