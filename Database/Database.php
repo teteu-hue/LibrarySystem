@@ -36,7 +36,7 @@ Class Database{
         }
     }
 
-    public function getBookAndGenderByName($id_book){
+    public function getBookAndGenderByID($id_book){
 
         $sql_search_book = "SELECT id_livro, nome_livro, preco, nome_genero
                             FROM Livro 

@@ -2,17 +2,17 @@
 
 $hostname = "localhost";
 $username = "root";
-$password = "root";
+$password = "";
 $database = "biblioteca";
 
-$mysqli = new mysqli($hostname, $username, $password, $database);
+try {
+    $mysqli = new mysqli($hostname, $username, $password, $database);
+    echo "Connected Sucessfully!<br>";
 
-if($mysqli->connect_error){
-    die("Connection failed: ". mysqli_connect_error());
+} catch(Exception $e) {
+    echo "Connected Failed: " . $e->getMessage();
 }
     
-echo "Connected Sucessfully!<br>";
-
 // Criando as tabelas
 $generoQuery = "CREATE TABLE IF NOT EXISTS Genero (
     id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
