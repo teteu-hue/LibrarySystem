@@ -2,7 +2,7 @@
 
 $hostname = "localhost";
 $username = "root";
-$password = "";
+$password = "root";
 $database = "biblioteca";
 
 try {
@@ -15,14 +15,14 @@ try {
     
 // Criando as tabelas
 $generoQuery = "CREATE TABLE IF NOT EXISTS Genero (
-    id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    id_genero INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
     nome_genero VARCHAR(50) NOT NULL
 );";
 
 $livroQuery = "CREATE TABLE IF NOT EXISTS Livro (
     id_livro INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
     nome_livro VARCHAR(100) NOT NULL,
-    id_genero INT NOT NULL REFERENCES Genero(id),
+    id_genero INT NOT NULL REFERENCES Genero(id_genero),
     preco DECIMAL(10,2) NOT NULL,
     numeroDePaginas INT NOT NULL,
     descricao TEXT
@@ -33,14 +33,14 @@ $pessoaQuery = "CREATE TABLE IF NOT EXISTS Pessoa(
     nome VARCHAR(30) NOT NULL,
     rg INT (9) NOT NULL,
     nascimento DATE
-);"
+);";
 
 $contatoQuery = "CREATE TABLE IF NOT EXISTS contato(
     id_contato INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
     email VARCHAR(40) NOT NULL,
     telefone INT(9) NOT NULL,
     id_pessoa_contato INT NOT NULL REFERENCES Pessoa(id)
-);"
+);";
 // id_pessoa_contato.  id_pessoa sera vinculado a outras tabelas
 // e o mysql pode reclamar ao usar o mesmo nome em varias colunas, mesmo sendo de tabelas diferentes
 // por isso como bo pratica  id_pessoa(referindo a qual tabela esta vinculada)_contato(referindo a tebela em si)
@@ -51,14 +51,14 @@ $emprestimoQuery = "CREATE TABLE IF NOT EXISTS Emprestimo(
     id_livro_emprestimo  INT NOT NULL REFERENCES Livro(id),
     dia DATETIME NOT NULL ,
     prazo DATE NOT NULL 
-);"
+);";
 
 $devolucaoQuery = "CREATE TABLE IF NOT EXISTS Devolucao(
     id_devolucao INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
     id_pessoa_devolucao INT NOT NULL REFERENCES Pessoa(id),
     id_livro_devolucao  INT NOT NULL REFERENCES Livro(id),
     devolucao DATETIME NOT NULL 
-);"
+);";
 
 // Rodando a query no banco de dados
 if($mysqli->query($generoQuery) === TRUE){
@@ -73,29 +73,29 @@ if($mysqli->query($livroQuery) === TRUE){
     echo "Erro ao criar tabela: " . $mysqli->error;
 }
 
-if($mysqli->query($contatoQuery) === TRUE){
-    echo "Tabela criada com sucesso. <br>";
-} else {
-    echo "Erro ao criar tabela: " . $mysqli->error;
-}
-
-if($mysqli->query($pessoaQuery) === TRUE){
-    echo "Tabela criada com sucesso. <br>";
-} else {
-    echo "Erro ao criar tabela: " . $mysqli->error;
-}
-
-if($mysqli->query($devolucaoQuery) === TRUE){
-    echo "Tabela criada com sucesso. <br>";
-} else {
-    echo "Erro ao criar tabela: " . $mysqli->error;
-}
-
-if($mysqli->query($emprestimoQuery) === TRUE){
-    echo "Tabela criada com sucesso. <br>";
-} else {
-    echo "Erro ao criar tabela: " . $mysqli->error;
-}
+//if($mysqli->query($contatoQuery) === TRUE){
+//    echo "Tabela criada com sucesso. <br>";
+//} else {
+//    echo "Erro ao criar tabela: " . $mysqli->error;
+//}
+//
+//if($mysqli->query($pessoaQuery) === TRUE){
+//    echo "Tabela criada com sucesso. <br>";
+//} else {
+//    echo "Erro ao criar tabela: " . $mysqli->error;
+//}
+//
+//if($mysqli->query($devolucaoQuery) === TRUE){
+//    echo "Tabela criada com sucesso. <br>";
+//} else {
+//    echo "Erro ao criar tabela: " . $mysqli->error;
+//}
+//
+//if($mysqli->query($emprestimoQuery) === TRUE){
+//    echo "Tabela criada com sucesso. <br>";
+//} else {
+//    echo "Erro ao criar tabela: " . $mysqli->error;
+//}
 
 
 // Inserindo dados nas tabelas

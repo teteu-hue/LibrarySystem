@@ -19,7 +19,7 @@
 
     echo "<br>";
 
-    $result2 = $conn->getBookAndGenderByID(5);
+    $result2 = $conn->getBookAndGenderByID(2);
     var_dump($result2);
 
     include("$rootDir/model/Layout/Layout.php");
