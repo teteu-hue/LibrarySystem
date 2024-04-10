@@ -28,6 +28,38 @@ $livroQuery = "CREATE TABLE IF NOT EXISTS Livro (
     descricao TEXT
 );";
 
+$pessoaQuery = "CREATE TABLE IF NOT EXISTS Pessoa(
+    id_pessoa INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    nome VARCHAR(30) NOT NULL,
+    rg INT (9) NOT NULL,
+    nascimento DATE
+);"
+
+$contatoQuery = "CREATE TABLE IF NOT EXISTS contato(
+    id_contato INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    email VARCHAR(40) NOT NULL,
+    telefone INT(9) NOT NULL,
+    id_pessoa_contato INT NOT NULL REFERENCES Pessoa(id)
+);"
+// id_pessoa_contato.  id_pessoa sera vinculado a outras tabelas
+// e o mysql pode reclamar ao usar o mesmo nome em varias colunas, mesmo sendo de tabelas diferentes
+// por isso como bo pratica  id_pessoa(referindo a qual tabela esta vinculada)_contato(referindo a tebela em si)
+
+$emprestimoQuery = "CREATE TABLE IF NOT EXISTS Emprestimo(
+    id_emprestimo INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    id_pessoa_emprestimo INT NOT NULL REFERENCES Pessoa(id),
+    id_livro_emprestimo  INT NOT NULL REFERENCES Livro(id),
+    dia DATETIME NOT NULL ,
+    prazo DATE NOT NULL 
+);"
+
+$devolucaoQuery = "CREATE TABLE IF NOT EXISTS Devolucao(
+    id_devolucao INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    id_pessoa_devolucao INT NOT NULL REFERENCES Pessoa(id),
+    id_livro_devolucao  INT NOT NULL REFERENCES Livro(id),
+    devolucao DATETIME NOT NULL 
+);"
+
 // Rodando a query no banco de dados
 if($mysqli->query($generoQuery) === TRUE){
     echo "Tabela criada com sucesso. <br>";
