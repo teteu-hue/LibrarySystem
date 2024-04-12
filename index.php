@@ -9,7 +9,7 @@
     require("$rootDir/model/Book/Book.php");
     require("$rootDir/model/Library/Library.php");
     require("$rootDir/Database/database-pdo.php");
-
+    echo "<pre>";
     $result = $conn->getBookById(5);
     var_dump($result);
     echo "<br>";

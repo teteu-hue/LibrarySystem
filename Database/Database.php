@@ -1,6 +1,6 @@
 <?php
 
-require("database-script.php");
+require("database_script.php");
 require("database-pdo.php");
 
 Class Database{
@@ -11,11 +11,7 @@ Class Database{
         $this->conn = $conn;
     }
 
-    public function getBookById($idBook){
-        
-        $sql_search_book = "SELECT * FROM Livro WHERE id_livro = $idBook";
-
-        $result = $this->conn->query($sql_search_book);
+    public function validateSelectQuery($result){
         if(!empty($result)){
             $query = $result->fetch();
             return $query;
@@ -24,17 +20,22 @@ Class Database{
         }
     }
 
+    public function getBookById($idBook){
+        
+        $sql_search_book = "SELECT * FROM Livro WHERE id_livro = $idBook";
+
+        $result = $this->conn->query($sql_search_book);
+        $queryResult = $this->validateSelectQuery($result);
+        return $queryResult;
+    }
+
     public function getGenderById($idGender){
 
         $sql_search_gender = "SELECT * FROM Genero WHERE id_genero = $idGender";
 
         $result = $this->conn->query($sql_search_gender);
-        if(!empty($result)){
-            $query = $result->fetch();
-            return $query;
-        } else {
-            return false;
-        }
+        $queryResult = $this->validateSelectQuery($result);
+        return $queryResult;
     }
 
     public function getBookAndGenderByID($id_book){
@@ -46,12 +47,8 @@ Class Database{
         ";
 
         $result = $this->conn->query($sql_search_book);
-        if(!empty($result)){
-            $query = $result->fetch();
-            return $query;
-        } else {
-            return false;
-        }
+        $queryResult = $this->validateSelectQuery($result);
+        return $queryResult;
     }
 
 }
