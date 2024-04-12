@@ -10,14 +10,14 @@
     require("$rootDir/model/Library/Library.php");
     require("$rootDir/Database/database-pdo.php");
 
-    //$result = $conn->getBookById(5);
-    //var_dump($result);
-    //echo "<br>";
-    //$result1 = $conn->getGenderById(2);
-    //var_dump($result1);
-    //echo "<br>";
-    //$result2 = $conn->getBookAndGenderByID(2);
-    //var_dump($result2);
+    $result = $conn->getBookById(5);
+    var_dump($result);
+    echo "<br>";
+    $result1 = $conn->getGenderById(2);
+    var_dump($result1);
+    echo "<br>";
+    $result2 = $conn->getBookAndGenderByID(2);
+    var_dump($result2);
 
     include("$rootDir/model/Layout/Layout.php");
     include("$rootDir/view/header.php");

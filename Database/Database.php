@@ -1,6 +1,7 @@
 <?php
 
-require("database_connect.php");
+require("database-script.php");
+require("database-pdo.php");
 
 Class Database{
 
@@ -15,8 +16,8 @@ Class Database{
         $sql_search_book = "SELECT * FROM Livro WHERE id_livro = $idBook";
 
         $result = $this->conn->query($sql_search_book);
-        if($result->num_rows > 0){
-            $query = $result->fetch_assoc();
+        if(!empty($result)){
+            $query = $result->fetch();
             return $query;
         } else {
             return false;
@@ -28,8 +29,8 @@ Class Database{
         $sql_search_gender = "SELECT * FROM Genero WHERE id_genero = $idGender";
 
         $result = $this->conn->query($sql_search_gender);
-        if($result->num_rows > 0){
-            $query = $result->fetch_assoc();
+        if(!empty($result)){
+            $query = $result->fetch();
             return $query;
         } else {
             return false;
@@ -45,16 +46,15 @@ Class Database{
         ";
 
         $result = $this->conn->query($sql_search_book);
-        if($result->num_rows > 0){
-            $query = $result->fetch_assoc();
+        if(!empty($result)){
+            $query = $result->fetch();
             return $query;
         } else {
             return false;
         }
-
     }
 
 }
 
-$conn = new Database($mysqli);
+$conn = new Database($pdo);
 ?>
