@@ -2,15 +2,17 @@
     require_once("../controller/RootDir/RootDir.php");
 
     $rootDir = RootDir::getRealPath();
-
+    
+    require("$rootDir/Database/Database.php");
     require("$rootDir/model/Address/Address.php");
     require("$rootDir/model/Notebook/Notebook.php");
     require("$rootDir/model/Book/Book.php");
-    require("$rootDir/Database/books.php");
     require("$rootDir/model/Library/Library.php");
+
+    $genderBooks = $conn->getAllGender();
+
 ?>
 <?php require("header.php");?>
-
 
 <form class="row g-3" action="acao.php" method="post">
     
@@ -23,10 +25,10 @@
   <div class="col-md-4">
     <label for="inputState" class="form-label">Gênero</label>
     <select class="form-select" name="genderBook" size="<?php count($genderBooks)?>" id="">          
-            <?php for($i = 0; $i < count($genderBooks); $i++){ ?>
+            <?php foreach($genderBooks as $row){ ?>
                 
-                <option class="option fs-2" value="<?php echo $genderBooks[$i]->getIdGenderBook()?>">
-                    <?php echo $genderBooks[$i]->getName()?>
+                <option class="option fs-2" value="<?php echo $row["id_genero"]?>">
+                    <?php echo $row["nome_genero"]?>
                 </option>
 
             <?php }?>

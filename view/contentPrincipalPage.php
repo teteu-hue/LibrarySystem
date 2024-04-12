@@ -4,7 +4,7 @@
 <?php 
     $books = $conn->getAllBook();
     
-    Layout::showBooks($books) 
+    Layout::showBooks($books);
 ?>
 
 </div>

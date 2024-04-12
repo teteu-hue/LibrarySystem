@@ -46,6 +46,14 @@ Class Database{
         return $queryResult;
     }
 
+    public function getAllGender(){
+        $sql_search_all_gender = "SELECT * FROM Genero";
+
+        $result = $this->conn->query($sql_search_all_gender);
+        $queryResult = $this->validateSelectQuery($result);
+        return $queryResult;
+    }
+
     public function getBookAndGenderByID($id_book){
 
         $sql_search_book = "SELECT id_livro, nome_livro, preco, nome_genero

@@ -11,6 +11,10 @@
     require("$rootDir/model/Library/Library.php");
     require("$rootDir/Database/database-pdo.php"); 
 
+    echo "<pre>";
+    $result = $conn->getAllGender();
+    var_dump($result);
+
     include("$rootDir/model/Layout/Layout.php");
     include("$rootDir/view/header.php");
     include("$rootDir/view/contentPrincipalPage.php");
