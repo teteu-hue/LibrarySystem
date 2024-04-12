@@ -33,9 +33,4 @@ try {
 } catch(PDOException $e) {
     echo "Connected Failed: " . $e->getMessage();
 }
-
-$sth = $pdo->query("SELECT * FROM Livro");
-
-echo "<pre>";
-
 ?>
