@@ -13,7 +13,7 @@ Class Database{
 
     public function validateSelectQuery($result){
         if(!empty($result)){
-            $query = $result->fetch();
+            $query = $result->fetchAll();
             return $query;
         } else {
             return false;
@@ -25,6 +25,14 @@ Class Database{
         $sql_search_book = "SELECT * FROM Livro WHERE id_livro = $idBook";
 
         $result = $this->conn->query($sql_search_book);
+        $queryResult = $this->validateSelectQuery($result);
+        return $queryResult;
+    }
+
+    public function getAllBook(){
+        $sql_search_all_book = "SELECT * FROM Livro";
+
+        $result = $this->conn->query($sql_search_all_book);
         $queryResult = $this->validateSelectQuery($result);
         return $queryResult;
     }

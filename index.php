@@ -2,6 +2,7 @@
     require("controller/RootDir/RootDir.php");
     $rootDir = RootDir::getRealPath();
     
+    require("$rootDir/controller/Form/Form.php");
     include_once("$rootDir/Database/Database.php");
 
     require("$rootDir/model/Address/Address.php");
@@ -18,6 +19,8 @@
     echo "<br>";
     $result2 = $conn->getBookAndGenderByID(2);
     var_dump($result2);
+    echo "<br>";
+    
 
     include("$rootDir/model/Layout/Layout.php");
     include("$rootDir/view/header.php");
