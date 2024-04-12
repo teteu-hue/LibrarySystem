@@ -18,13 +18,13 @@
     
   <div class="col-md-6">
     <label for="inputNameBook" class="form-label">Nome do Livro</label>
-    <input type="text" class="form-control" name="nameBook" id="inputNameBook">
+    <input type="text" class="form-control" name="nome_livro" id="inputNameBook">
   </div>
 
 
   <div class="col-md-4">
     <label for="inputState" class="form-label">Gênero</label>
-    <select class="form-select" name="genderBook" size="<?php count($genderBooks)?>" id="">          
+    <select class="form-select" name="id_genero" size="<?php count($genderBooks)?>" id="">          
             <?php foreach($genderBooks as $row){ ?>
                 
                 <option class="option fs-2" value="<?php echo $row["id_genero"]?>">
@@ -38,12 +38,12 @@
       
   <div class="col-md-6">
     <label for="inputPrice" class="form-label">Price</label>
-    <input type="number" name="price" class="form-control" id="inputPrice">
+    <input type="number" name="preco" class="form-control" id="inputPrice">
   </div>
 
   <div class="col-md-6">
     <label for="inputNumPage" class="form-label">Número de Páginas</label>
-    <input type="text" name="numPage" class="form-control" id="inputNumPage">
+    <input type="text" name="numeroDePaginas" class="form-control" id="inputNumPage">
   </div>
       
   <div class="col-12">
