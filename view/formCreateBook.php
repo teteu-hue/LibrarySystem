@@ -45,6 +45,17 @@
     <label for="inputNumPage" class="form-label">Número de Páginas</label>
     <input type="text" name="numeroDePaginas" class="form-control" id="inputNumPage">
   </div>
+
+  <div class="col-md-6">
+    <label for="inputNumPage" class="form-label">Descrição</label>
+    <textarea type="text" cols="50" rows="4" name="descricao" class="form-control" id="inputNumPage">
+    </textarea>
+    <style>
+      textarea{
+        resize: none;
+      }
+    </style>
+  </div>
       
   <div class="col-12">
     <button type="submit" class="btn btn-primary">Enviar</button>
