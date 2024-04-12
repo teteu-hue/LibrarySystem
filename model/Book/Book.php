@@ -1,10 +1,12 @@
 <?php
+require_once("controller/RootDir/RootDir.php");
+$rootDir = RootDir::getRealPath();
 
+include_once "$rootDir/Database/Database.php";
 include "GenderBook.php";
 
-Class Book extends Notebook
+Class Book extends Database
 {
-    private static int $idSum = 0;
     private int $idBook;
     private string $nameBook;
     private GenderBook $genderBook;
@@ -17,7 +19,6 @@ Class Book extends Notebook
         $this->genderBook = $genderBook;
         $this->price = $price;
         $this->numPage = $numPage;
-        $this->idBook = ++Book::$idSum;
         $this->description = $description;
     }
 

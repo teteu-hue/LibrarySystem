@@ -7,8 +7,44 @@ Class Database{
 
     private $conn;
 
-    public function __construct($conn){
-        $this->conn = $conn;
+    public function __construct($file = 'settings-database.ini'){    
+try{
+
+    $file = 'settings-database.ini';
+    
+    if($database = parse_ini_file($file)){
+        
+        $driver = $database["driver"];
+        $db = $database["db"];
+        $charset = $database["charset"];
+        $host = $database["host"];
+        $port = $database["port"];
+        $user = $database["username"];
+        $password = $database["password"]; 
+
+        $dsn = "$driver:host=$host;dbname=$db;charset=$charset;port=$port";
+        
+        $options = [
+            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+            PDO::ATTR_EMULATE_PREPARES => false
+        ];
+    }
+} catch(Exception $e){
+    echo "Unable to open " . $file;
+}
+        
+        try {
+            $this->conn = new PDO($dsn, $user, $password, $options);
+            echo "Connected Sucessfully!<br>";
+        
+        } catch(PDOException $e) {
+            echo "Connected Failed: " . $e->getMessage();
+        }
+    }
+
+    public function getConn(){
+        return $this->conn;
     }
 
     public function validateSelectQuery($result){
@@ -67,7 +103,14 @@ Class Database{
         return $queryResult;
     }
 
+    public function insertBook(Book $book){
+        $name = $book->getNameBook();
+        $genderBook = $book->getGenderBook();
+        $sql_insert_book = "INSERT INTO Livro (nome_livro, id_genero, preco, numeroDePaginas, descricao)  
+                            VALUES()";
+    }
+
 }
 
-$conn = new Database($pdo);
+$conn = new Database();
 ?>

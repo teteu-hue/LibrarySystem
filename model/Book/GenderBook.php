@@ -2,10 +2,12 @@
 
 Class GenderBook
 {
+    private $idGender;
     private $name;
 
-    public function __construct($name)
+    public function __construct($idGender, $name)
     {
+        $this->idGender = $idGender;
         $this->name = $name;
     }
 
