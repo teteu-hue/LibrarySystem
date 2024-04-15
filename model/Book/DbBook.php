@@ -1,12 +1,7 @@
 <?php
 
-use function PHPSTORM_META\map;
-
-require_once("../../controller/RootDir/RootDir.php");
-$root = RootDir::getRealPath();
-
-require_once("$root/Database/Database.php");
-require_once("$root/model/Book/Book.php");
+require_once("$rootDir/Database/Database.php");
+require_once("$rootDir/model/Book/Book.php");
 
 Class DbBook
 {
@@ -79,9 +74,5 @@ Class DbBook
 echo "<pre>";
 
 $db = new DbBook();
-$ob = new Book("Jeff", new GenderBook(1, "Romance"), 55.5, 555, "test");
-$query = $db->insertBook($ob);
 
-$result = $db->getBookAndGenderByID(19);
-var_dump($result);
 ?>
