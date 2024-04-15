@@ -9,7 +9,7 @@
     require("$rootDir/model/Book/Book.php");
     require("$rootDir/model/Library/Library.php");
 
-    $genderBooks = $conn->getAllGender();
+    $genderBooks = Database::getAllGender();
 
 ?>
 <?php require("header.php");?>

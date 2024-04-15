@@ -57,11 +57,13 @@ Class Database{
         return $queryResult;
     }
 
-    public function getAllGender(){
+    public static function getAllGender(){
+        self::$conn = Database::getConnection();
+
         $sql_search_all_gender = "SELECT * FROM Genero";
 
         $result = self::$conn->query($sql_search_all_gender);
-        $queryResult = $this->validateSelectQuery($result);
+        $queryResult = Database::validateSelectQuery($result);
         return $queryResult;
     }
 
