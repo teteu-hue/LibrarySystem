@@ -65,19 +65,5 @@ Class Database{
         return $queryResult;
     }
 
-    public function getBookAndGenderByID($id_book){
-
-        $sql_search_book = "SELECT id_livro, nome_livro, preco, nome_genero
-                            FROM Livro 
-                            INNER JOIN Genero ON Genero.id_genero = Livro.id_genero
-                            WHERE Livro.id_livro = $id_book;
-        ";
-
-        $result = self::$conn->query($sql_search_book);
-        $queryResult = Database::validateSelectQuery($result);
-        return $queryResult;
-    }
 }
-
-$conn = new Database();
 ?>

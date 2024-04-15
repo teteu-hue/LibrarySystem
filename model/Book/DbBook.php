@@ -38,7 +38,6 @@ Class DbBook
         $conn = Database::getConnection();
 
         $name = $book->getNameBook();
-        $genderBookID = $book->getGenderBook();
         $genderBook = $book->getGenderBook()->getGenderID();
 
         $preco = $book->getPrice();
@@ -61,6 +60,21 @@ Class DbBook
 
         return $p_sql->execute($data);
     }
+
+    public function getBookAndGenderByID($id_book){
+
+        $conn = Database::getConnection();
+
+        $sql_search_book = "SELECT id_livro, nome_livro, preco, nome_genero, numeroDePaginas
+                            FROM Livro 
+                            INNER JOIN Genero ON Genero.id_genero = Livro.id_genero
+                            WHERE Livro.id_livro = $id_book;
+        ";
+
+        $result = $conn->query($sql_search_book);
+        $queryResult = Database::validateSelectQuery($result);
+        return $queryResult;
+    }
 }
 echo "<pre>";
 
@@ -68,6 +82,6 @@ $db = new DbBook();
 $ob = new Book("Jeff", new GenderBook(1, "Romance"), 55.5, 555, "test");
 $query = $db->insertBook($ob);
 
-$result = $db->getBookById(19);
+$result = $db->getBookAndGenderByID(19);
 var_dump($result);
 ?>
