@@ -1,11 +1,7 @@
 <?php
-require_once("controller/RootDir/RootDir.php");
-$rootDir = RootDir::getRealPath();
-
-include_once "$rootDir/Database/Database.php";
 include "GenderBook.php";
 
-Class Book extends Database
+Class Book
 {
     private int $idBook;
     private string $nameBook;
@@ -24,7 +20,8 @@ Class Book extends Database
 
     /* GETTERS AND SETTERS */
 
-    public function getIdBook() : int {
+    public function getIdBook() : int 
+    {
         return $this->idBook;
     }
 

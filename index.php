@@ -11,8 +11,8 @@
     require("$rootDir/model/Library/Library.php");
     
     echo "<pre>";
-    $result = $conn->getAllGender();
-    var_dump($result);
+    $result = Database::getConnection();
+    
     
     include("$rootDir/model/Layout/Layout.php");
     include("$rootDir/view/header.php");

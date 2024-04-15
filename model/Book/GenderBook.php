@@ -11,6 +11,10 @@ Class GenderBook
         $this->name = $name;
     }
 
+    public function getGenderID(){
+        return $this->idGender;
+    }
+
     public function getName()
     {
         return $this->name;
