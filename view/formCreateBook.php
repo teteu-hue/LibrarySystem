@@ -5,11 +5,9 @@
     
     require("$rootDir/Database/Database.php");
     require("$rootDir/model/Address/Address.php");
-    require("$rootDir/model/Notebook/Notebook.php");
     require("$rootDir/model/Book/Book.php");
-    require("$rootDir/model/Library/Library.php");
 
-    $genderBooks = $conn->getAllGender();
+    $genderBooks = Database::getAllGender();
 
 ?>
 <?php require("header.php");?>

@@ -1,10 +1,8 @@
 <?php
-
 include "GenderBook.php";
 
-Class Book extends Notebook
+Class Book
 {
-    private static int $idSum = 0;
     private int $idBook;
     private string $nameBook;
     private GenderBook $genderBook;
@@ -17,13 +15,13 @@ Class Book extends Notebook
         $this->genderBook = $genderBook;
         $this->price = $price;
         $this->numPage = $numPage;
-        $this->idBook = ++Book::$idSum;
         $this->description = $description;
     }
 
     /* GETTERS AND SETTERS */
 
-    public function getIdBook() : int {
+    public function getIdBook() : int 
+    {
         return $this->idBook;
     }
 

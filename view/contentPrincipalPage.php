@@ -2,7 +2,7 @@
 <div class="row justify-content-between"> 
 
 <?php 
-    $books = $conn->getAllBook();
+    $books = $db->getAllBook();
     
     Layout::showBooks($books);
 ?>
