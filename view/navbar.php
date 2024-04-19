@@ -4,16 +4,13 @@
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/LibrarySystem/index.php">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="/LibrarySystem/view/formCreateBook.php">Criar livro</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="#">Features</a>
+          <a class="nav-link" aria-current="page" href="/LibrarySystem/view/books.php">Books</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" aria-current="page" href="/LibrarySystem/view/login.php">Login</a>
