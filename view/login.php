@@ -14,7 +14,7 @@
         </div>
         <div>
 
-            <button class=" m-3 btn btn-primary fs-5" type="submit">Enviar</button> <button class="  btn btn-primary fs-5" type="reset">Limpar</button>
+            <button class=" m-3 btn btn-outline-success btn-sm fs-5" type="submit">Enviar</button> <button class=" m-3 btn btn-outline-danger btn-sm fs-5" type="reset">Limpar</button>
         </div>
 
     </form>

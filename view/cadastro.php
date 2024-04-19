@@ -1,5 +1,5 @@
 <?php require("header.php")?>
-     
+     <div class="corpo">
     <script>
         function confereSenha(){
             const senha = document.querySelector('input[name=senha]');
@@ -20,6 +20,8 @@
 
 
     <form name="cadastro" onsubmit="senhaOK()" action="post">
+
+    <h1 class="m-3 fs-1">Cadastro</h1>
         <div>
             <label class=" m-3 form-label fs-5" for="">Nome Completo:</label>
             <input class=" m-3 form-control form-control-lg fs-5" type="text" placeholder="Digite seu nome" >
@@ -64,9 +66,10 @@
             <label class=" m-3 form-label fs-5" for="">Cidade</label>
             <input class=" m-3 form-control form-control-lg fs-5" type="text" placeholder="Digite sua cidade" >
         </div>
+
         <div>
             <label class=" m-3 form-label fs-5" for="">Estado</label>
-            <select id="estado" name="estado">
+            <select  id="estado" name="estado">
                 <option value="AC">AC</option>
                 <option value="AL">AL</option>
                 <option value="AP">AP</option>
@@ -110,9 +113,10 @@
             
             <div>
 
-            <button class=" m-3 btn btn-primary fs-5" type="submit">Enviar</button> <button class="  btn btn-primary fs-5" type="reset">Limpar</button>
+            <button class=" m-3 btn btn-outline-success btn-sm fs-5" type="submit">Enviar</button> <button class="m-3 btn btn-outline-danger btn-sm fs-5" type="reset">Limpar</button>
             </div>
         </div>
     </form>
+    </div>
 
 <?php require("footer.php")?>
