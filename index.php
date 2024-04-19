@@ -6,6 +6,7 @@
     
     require("$rootDir/model/Address/Address.php");
     include("$rootDir/model/Layout/Layout.php");
+    
     include("$rootDir/view/header.php");
     include("$rootDir/view/contentPrincipalPage.php");
     include("$rootDir/view/footer.php");

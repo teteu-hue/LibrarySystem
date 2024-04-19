@@ -71,8 +71,4 @@ Class DbBook
         return $queryResult;
     }
 }
-echo "<pre>";
-
-$db = new DbBook();
-
 ?>
