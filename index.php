@@ -14,9 +14,9 @@
     
     $db = new DbGenderBook();
 
-    $result = $db->getGenderById(1);
+    $result = $db->getAllGender();
 
     echo '<pre>';
-    //var_dump($result);
+    var_dump($result);
     
     ?>
