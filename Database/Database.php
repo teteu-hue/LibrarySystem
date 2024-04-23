@@ -33,7 +33,6 @@ Class Database{
                 
         if(!isset(self::$conn)) {
             self::$conn = new PDO($dsn, $user, $password, $options);
-            echo "Connection is Sucessfully";
         }
 
         return self::$conn;

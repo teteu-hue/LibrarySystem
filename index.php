@@ -12,11 +12,4 @@
     include("$rootDir/view/home_page.php");
     include("$rootDir/view/footer.php");
     
-    $db = new DbGenderBook();
-
-    $result = $db->getAllGender();
-
-    echo '<pre>';
-    var_dump($result);
-    
-    ?>
+?>
