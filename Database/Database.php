@@ -48,9 +48,12 @@ Class Database{
         }
     }
     
-    
-
-    
+    public static function runSelectQuery($result){
+        $query = self::$conn->query($result);
+        $queryResult = Database::validateSelectQuery($query);
+        
+        return $queryResult[0];
+    }
 
 }
 ?>

@@ -3,26 +3,20 @@
 require_once("$rootDir/Database/Database.php");
 require_once("$rootDir/model/Book/Book.php");
 
-Class DbBook
+Class DbBook extends Database
 {
 
     public function getBookById($idBook){
         
         $sql_search_book = "SELECT * FROM Livro WHERE id_livro = $idBook";
-        
-        $conn = Database::getConnection();
-
-        $result = $conn->query($sql_search_book);
-        $queryResult = Database::validateSelectQuery($result);
+        $queryResult = Database::runSelectQuery($sql_search_book);
         return $queryResult;
     }
 
     public function getAllBook(){
-        $conn = Database::getConnection();
-        $sql_search_all_book = "SELECT * FROM Livro";
 
-        $result = $conn->query($sql_search_all_book);
-        $queryResult = Database::validateSelectQuery($result);
+        $sql_search_all_book = "SELECT * FROM Livro";
+        $queryResult = Database::runSelectQuery($sql_search_all_book);
         return $queryResult;
     }
 
@@ -57,17 +51,14 @@ Class DbBook
     }
 
     public function getBookAndGenderByID($id_book){
-
-        $conn = Database::getConnection();
-
+       
         $sql_search_book = "SELECT id_livro, nome_livro, preco, nome_genero, numeroDePaginas
                             FROM Livro 
                             INNER JOIN Genero ON Genero.id_genero = Livro.id_genero
                             WHERE Livro.id_livro = $id_book;
         ";
 
-        $result = $conn->query($sql_search_book);
-        $queryResult = Database::validateSelectQuery($result);
+        $queryResult = Database::runSelectQuery($sql_search_book);
         return $queryResult;
     }
 }
