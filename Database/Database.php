@@ -14,13 +14,12 @@ Class Database{
                 
                 $driver = $database["driver"];
                 $db = $database["db"];
-                $charset = $database["charset"];
                 $host = $database["host"];
                 $port = $database["port"];
                 $user = $database["username"];
                 $password = $database["password"]; 
         
-                $dsn = "$driver:host=$host;dbname=$db;charset=$charset;port=$port";
+                $dsn = "$driver:host=$host;dbname=$db;port=$port";
                 
                 $options = [
                     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,

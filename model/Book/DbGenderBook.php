@@ -25,7 +25,7 @@ class DbGenderBook
         return $queryResult;
     }
 
-
+    
 }
 
 ?>
