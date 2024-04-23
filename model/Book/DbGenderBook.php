@@ -15,7 +15,7 @@ class DbGenderBook
         return $queryResult;
     }
 
-    public static function getAllGender(){
+    public function getAllGender(){
         $conn = Database::getConnection();
 
         $sql_search_all_gender = "SELECT * FROM Genero";
@@ -24,6 +24,8 @@ class DbGenderBook
         $queryResult = Database::validateSelectQuery($result);
         return $queryResult;
     }
+
+
 }
 
 ?>
