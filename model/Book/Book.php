@@ -1,18 +1,21 @@
 <?php
-include "GenderBook.php";
+include_once "GenderBook.php";
+include_once "../Topic/Topic.php";
 
 Class Book
 {
     private int $idBook;
     private string $nameBook;
     private GenderBook $genderBook;
+    private Topic $topic;
     private float $price;
     private int $numPage;
     private string $description;
 
-    public function __construct($nameBook, $genderBook, $price, int $numPage, $description){
+    public function __construct($nameBook, $genderBook, $topic, $price, int $numPage, $description){
         $this->nameBook = $nameBook;
         $this->genderBook = $genderBook;
+        $this->topic = $topic;
         $this->price = $price;
         $this->numPage = $numPage;
         $this->description = $description;
@@ -38,6 +41,11 @@ Class Book
     public function getGenderBook()
     {
         return $this->genderBook;
+    }
+
+    public function getTopic()
+    {
+        return $this->topic;
     }
 
     public function getPrice()
