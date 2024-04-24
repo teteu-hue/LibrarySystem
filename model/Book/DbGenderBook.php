@@ -10,21 +10,21 @@ class DbGenderBook extends Database
     {
     }
 
-    public function getGenderById($idGender){
+    public static function getGenderById($idGender){
 
         $sql_search_gender = "SELECT * FROM genero WHERE id_genero = $idGender";
-        $queryResult = Database::runSelectQuery($sql_search_gender);
+        $queryResult = Database::runSelectQuery($sql_search_gender)[0];
         return $queryResult;
     }
 
-    public function getAllGender(){
+    public static function getAllGender(){
 
         $sql_search_all_gender = "SELECT * FROM Genero";
-        $queryResult = Database::runSelectQuery($sql_search_all_gender);
+        $queryResult = Database::runSelectQuery($sql_search_all_gender)[0];
         return $queryResult;
     }
 
-    public function insertGender(GenderBook $genderBook){
+    public static function insertGender(GenderBook $genderBook){
         if(!$genderBook){
             die("Please Insert a Book");
         }

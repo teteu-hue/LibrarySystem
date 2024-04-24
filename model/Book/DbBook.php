@@ -9,14 +9,14 @@ Class DbBook extends Database
     public function getBookById($idBook){
         
         $sql_search_book = "SELECT * FROM Livro WHERE id_livro = $idBook";
-        $queryResult = Database::runSelectQuery($sql_search_book);
+        $queryResult = Database::runSelectQuery($sql_search_book)[0];
         return $queryResult;
     }
 
     public function getAllBook(){
 
         $sql_search_all_book = "SELECT * FROM Livro";
-        $queryResult = Database::runSelectQuery($sql_search_all_book);
+        $queryResult = Database::runSelectQuery($sql_search_all_book)[0];
         return $queryResult;
     }
 
@@ -58,7 +58,7 @@ Class DbBook extends Database
                             WHERE Livro.id_livro = $id_book;
         ";
 
-        $queryResult = Database::runSelectQuery($sql_search_book);
+        $queryResult = Database::runSelectQuery($sql_search_book)[0];
         return $queryResult;
     }
 }

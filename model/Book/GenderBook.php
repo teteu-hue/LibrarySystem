@@ -1,20 +1,12 @@
 <?php
 
-
-
 Class GenderBook
 {
-    private $idGender;
     private $name;
 
-    public function __construct($idGender, $name)
+    public function __construct($name)
     {
-        $this->idGender = $idGender;
         $this->name = $name;
-    }
-
-    public function getGenderID(){
-        return $this->idGender;
     }
 
     public function getName()
