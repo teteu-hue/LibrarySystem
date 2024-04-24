@@ -69,34 +69,34 @@
 
         <div>
             <label class=" m-3 form-label fs-5" for="">Estado</label>
-            <select  id="estado" name="estado">
-                <option value="AC">AC</option>
-                <option value="AL">AL</option>
-                <option value="AP">AP</option>
-                <option value="AM">AM</option>
-                <option value="BA">BA</option>
-                <option value="CE">CE</option>
-                <option value="DF">DF</option>
-                <option value="ES">ES</option>
-                <option value="GO">GO</option>
-                <option value="MA">MA</option>
-                <option value="MT">MT</option>
-                <option value="MS">MS</option>
-                <option value="MG">MG</option>
-                <option value="PA">PA</option>
-                <option value="PB">PB</option>
-                <option value="PR">PR</option>
-                <option value="PE">PE</option>
-                <option value="PI">PI</option>
-                <option value="RJ">RJ</option>
-                <option value="RN">RN</option>
-                <option value="RS">RS</option>
-                <option value="RO">RO</option>
-                <option value="RR">RR</option>
-                <option value="SC">SC</option>
-                <option value="SP">SP</option>
-                <option value="SE">SE</option>
-                <option value="TO">TO</option>
+            <select class="form-select"  id="estado" name="estado">
+                <option class="option fs-2" value="AC">AC</option>
+                <option class="option fs-2" value="AL">AL</option>
+                <option class="option fs-2" value="AP">AP</option>
+                <option class="option fs-2" value="AM">AM</option>
+                <option class="option fs-2" value="BA">BA</option>
+                <option class="option fs-2" value="CE">CE</option>
+                <option class="option fs-2" value="DF">DF</option>
+                <option class="option fs-2" value="ES">ES</option>
+                <option class="option fs-2" value="GO">GO</option>
+                <option class="option fs-2" value="MA">MA</option>
+                <option class="option fs-2" value="MT">MT</option>
+                <option class="option fs-2" value="MS">MS</option>
+                <option class="option fs-2" value="MG">MG</option>
+                <option class="option fs-2" value="PA">PA</option>
+                <option class="option fs-2" value="PB">PB</option>
+                <option class="option fs-2" value="PR">PR</option>
+                <option class="option fs-2" value="PE">PE</option>
+                <option class="option fs-2" value="PI">PI</option>
+                <option class="option fs-2" value="RJ">RJ</option>
+                <option class="option fs-2" value="RN">RN</option>
+                <option class="option fs-2" value="RS">RS</option>
+                <option class="option fs-2" value="RO">RO</option>
+                <option class="option fs-2" value="RR">RR</option>
+                <option class="option fs-2" value="SC">SC</option>
+                <option class="option fs-2" value="SP">SP</option>
+                <option class="option fs-2" value="SE">SE</option>
+                <option class="option fs-2" value="TO">TO</option>
             </select>
         </div>
         <div>

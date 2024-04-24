@@ -20,9 +20,36 @@ require("$rootDir/model/Book/Book.php");
   </div>
 
 
+
   <div class="col-md-4">
-    <label for="inputState" class="form-label">Gênero</label>
-    <select class="form-select" name="id_genero" id="">
+    
+    <label for="inputState" class="form-label">Gênero </label>
+                  <button type="button" class=" m-3 btn btn-outline-primary btn-sm fs-5" data-bs-toggle="modal" data-bs-target="#botaoModal">+</button>
+
+              <div id=botaoModal class="modal">
+
+                <div class="modal-dialog">
+
+                  <div class="modal-content">
+
+                    <div class="modal-header">
+                      <h1 class="modal-title">Adicionar Gênero </h1>
+                      <button type="button" class="btn btn-close" data-bs-dismiss="modal" ></button>
+                    </div>
+
+                    <div class="modal-body">
+                      <input type="text" name="novoGenero" size="">
+                      <button type="button" class="btn btn-success" data-bs-dismiss="modal" > criar</button>
+                    </div>
+
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal" >fechar</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+   
+              <select class="form-select" name="id_genero" id="">
 
       <option class="option fs-2" value="Romance">
         Romance
