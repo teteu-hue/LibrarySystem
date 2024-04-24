@@ -71,6 +71,37 @@ require("$rootDir/model/Book/Book.php");
   </div>
 
   <div class="col-md-6">
+    
+    <label for="inputState" class="form-label">Assunto</label>
+                  <button type="button" class=" m-3 btn btn-outline-primary btn-sm fs-5" data-bs-toggle="modal" data-bs-target="#botao2Modal">Assunto</button>
+
+              <div id=botao2Modal class="modal">
+
+                <div class="modal-dialog">
+
+                  <div class="modal-content">
+
+                    <div class="modal-header">
+                      <h1 class="modal-title">Adicionar Assunto </h1>
+                      <button type="button" class="btn btn-close" data-bs-dismiss="modal" ></button>
+                    </div>
+
+                    <div class="modal-body">
+                      <input type="text" name="novoGenero" size="">
+                      <button type="button" class="btn btn-success" data-bs-dismiss="modal" > criar</button>
+                    </div>
+
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal" >fechar</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+  </div>
+
+
+
+  <div class="col-md-6">
     <label for="inputPrice" class="form-label">Price</label>
     <input type="number" name="preco" class="form-control" id="inputPrice">
   </div>
