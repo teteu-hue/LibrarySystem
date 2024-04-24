@@ -18,3 +18,7 @@ input.m-3.form-control.form-control-lg.fs-5{
 #estado{
     width: 10%;
 }
+
+.row {
+    margin-top: 1.5rem;
+}
