@@ -3,11 +3,11 @@ require_once("../controller/RootDir/RootDir.php");
 
 $rootDir = RootDir::getRealPath();
 
-require("$rootDir/Database/Database.php");
+require_once("$rootDir/model/Book/DbGenderBook.php");
 require("$rootDir/model/Address/Address.php");
 require("$rootDir/model/Book/Book.php");
 
-//$genderBooks = Database::getAllGender();
+$genderBooks = DbGenderBook::getAllGender();
 
 ?>
 <?php require("header.php"); ?>
@@ -24,21 +24,11 @@ require("$rootDir/model/Book/Book.php");
     <label for="inputState" class="form-label">Gênero</label>
     <select class="form-select" name="id_genero" id="">
 
-      <option class="option fs-2" value="Romance">
-        Romance
-      </option>
-
-      <option class="option fs-2" value="Fantasia">
-        Fantasia
-      </option>
-
-      <option class="option fs-2" value="ficcao-cientifica">
-        Ficção Cientifica
-      </option>
-
-      <option class="option fs-2" value="Suspense">
-        Suspense
-      </option>
+      <?php foreach ($genderBooks as $row) { ?>
+        <option class="option fs-2" value="<?php echo $row['id_genero'] ?>">
+          <?php echo $row['nome_genero'] ?>
+        </option>
+      <?php } ?>
 
     </select>
   </div>
@@ -50,7 +40,7 @@ require("$rootDir/model/Book/Book.php");
 
   <div class="col-md-6">
     <label for="inputNumPage" class="form-label">Número de Páginas</label>
-    <input type="text" name="numeroDePaginas" class="form-control" id="inputNumPage">
+    <input type="text" name="numero_paginas" class="form-control" id="inputNumPage">
   </div>
 
   <div class="col-md-6">

@@ -1,24 +1,24 @@
 <?php
 include_once "GenderBook.php";
-include_once "Topic.php";
+include_once "PublisherBook.php";
 
 Class Book
 {
     private int $idBook;
     private string $nameBook;
     private GenderBook $genderBook;
-    private Topic $topic;
+    private PublisherBook $publisherBook;
     private float $price;
     private int $numPage;
     private string $description;
 
-    public function __construct($nameBook, $genderBook, $topic, $price, int $numPage, $description){
+    public function __construct($nameBook, $genderBook, $publisherBook, $price, int $numPage, $description){
         $this->nameBook = $nameBook;
         $this->genderBook = $genderBook;
-        $this->topic = $topic;
         $this->price = $price;
         $this->numPage = $numPage;
         $this->description = $description;
+        $this->publisherBook = $publisherBook;
     }
 
     /* GETTERS AND SETTERS */
@@ -43,9 +43,8 @@ Class Book
         return $this->genderBook;
     }
 
-    public function getTopic()
-    {
-        return $this->topic;
+    public function getPublisherBook(){
+        return $this->publisherBook;
     }
 
     public function getPrice()
