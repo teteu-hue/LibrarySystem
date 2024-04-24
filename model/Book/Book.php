@@ -1,6 +1,6 @@
 <?php
 include_once "GenderBook.php";
-include_once "../Topic/Topic.php";
+include_once "Topic.php";
 
 Class Book
 {

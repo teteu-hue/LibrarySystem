@@ -1,7 +1,6 @@
 <?php
 
 require("database_script.php");
-require("database-pdo.php");
 
 Class Database{
 
