@@ -12,44 +12,19 @@ $genderBooks = DbGenderBook::getAllGender();
 ?>
 <?php require("header.php"); ?>
 
-<form class="row g-3" action="acao.php" method="post">
+<form class="row g-3 createBookForm" action="acao.php" method="post">
 
   <div class="col-md-6">
     <label for="inputNameBook" class="form-label">Nome do Livro</label>
     <input type="text" class="form-control" name="nome_livro" id="inputNameBook">
   </div>
 
-
-
   <div class="col-md-4">
-    
-    <label for="inputState" class="form-label">Gênero </label>
-                  <button type="button" class=" m-3 btn btn-outline-primary btn-sm fs-5" data-bs-toggle="modal" data-bs-target="#botaoModal">+</button>
 
-              <div id=botaoModal class="modal">
+    <label for="inputState" class="form-label">Gênero</label>
+    <a href="formCreateGender.php" class=" m-3 btn btn-outline-primary btn-sm fs-5">+</a>
 
-                <div class="modal-dialog">
-
-                  <div class="modal-content">
-
-                    <div class="modal-header">
-                      <h1 class="modal-title">Adicionar Gênero </h1>
-                      <button type="button" class="btn btn-close" data-bs-dismiss="modal" ></button>
-                    </div>
-
-                    <div class="modal-body">
-                      <input type="text" name="novoGenero" size="">
-                      <button type="button" class="btn btn-success" data-bs-dismiss="modal" > criar</button>
-                    </div>
-
-                    <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal" >fechar</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-   
-              <select class="form-select" name="id_genero" id="">
+    <select class="form-select" name="id_genero" id="">
 
       <?php foreach ($genderBooks as $row) { ?>
         <option class="option fs-2" value="<?php echo $row['id_genero'] ?>">
@@ -59,37 +34,6 @@ $genderBooks = DbGenderBook::getAllGender();
 
     </select>
   </div>
-
-  <div class="col-md-6">
-    
-    <label for="inputState" class="form-label">Assunto</label>
-                  <button type="button" class=" m-3 btn btn-outline-primary btn-sm fs-5" data-bs-toggle="modal" data-bs-target="#botao2Modal">Assunto</button>
-
-              <div id=botao2Modal class="modal">
-
-                <div class="modal-dialog">
-
-                  <div class="modal-content">
-
-                    <div class="modal-header">
-                      <h1 class="modal-title">Adicionar Assunto </h1>
-                      <button type="button" class="btn btn-close" data-bs-dismiss="modal" ></button>
-                    </div>
-
-                    <div class="modal-body">
-                      <input type="text" name="novoGenero" size="">
-                      <button type="button" class="btn btn-success" data-bs-dismiss="modal" > criar</button>
-                    </div>
-
-                    <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal" >fechar</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-  </div>
-
-
 
   <div class="col-md-6">
     <label for="inputPrice" class="form-label">Price</label>
@@ -115,9 +59,6 @@ $genderBooks = DbGenderBook::getAllGender();
   <div class="col-12">
     <button type="submit" class="btn btn-primary">Enviar</button>
     <button type="reset" class="btn btn-danger">Limpar</button>
-  </div>
-  <div class="col-md-6">
-
   </div>
 
 </form>
