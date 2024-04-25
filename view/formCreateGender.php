@@ -18,20 +18,25 @@ include("$rootDir/view/header.php");
         </div>
         <div class="col">
 
-            <form method="POST" action="?sucess=1">
+            <form method="POST" action="formCreateGender.php">
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Gênero</label>
-                    <input type="text" placeholder="Digite o nome do gênero do livro" class="form-control input-gender" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <input type="text" name="nome_genero" placeholder="Digite o nome do gênero do livro" class="form-control input-gender" id="exampleInputEmail1" aria-describedby="emailHelp">
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary">Criar</button>
             </form>
 
         </div>
         <div class="col">
-
         </div>
     </div>
 </div>
 
+<?php
+
+$gender = new GenderBook($_POST["nome_genero"]);
+
+
+?>
 
 <?php include("$rootDir/view/footer.php"); ?>

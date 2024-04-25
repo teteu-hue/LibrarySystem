@@ -29,6 +29,9 @@
         <li class="nav-item">
           <a class="nav-link" aria-current="page" href="/LibrarySystem/view/login.php">Login</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="/LibrarySystem/view/menu-admin.php">Admin</a>
+        </li>
       </ul>
     </div>
   </div>
