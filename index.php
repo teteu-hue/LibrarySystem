@@ -4,6 +4,7 @@
     
     require_once("$rootDir/model/Book/DbBook.php");
     require_once("$rootDir/model/Book/DbGenderBook.php");
+    require_once("$rootDir/model/Book/DbPublisherBook.php");
 
     require("$rootDir/model/Address/Address.php");
     include("$rootDir/model/Layout/Layout.php");

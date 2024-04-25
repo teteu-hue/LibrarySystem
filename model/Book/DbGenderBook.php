@@ -13,14 +13,14 @@ class DbGenderBook extends Database
     public static function getGenderById($idGender){
 
         $sql_search_gender = "SELECT * FROM genero WHERE id_genero = $idGender";
-        $queryResult = Database::runSelectQuery($sql_search_gender)[0];
+        $queryResult = Database::runSelectQuery($sql_search_gender);
         return $queryResult;
     }
 
     public static function getAllGender(){
 
         $sql_search_all_gender = "SELECT * FROM Genero";
-        $queryResult = Database::runSelectQuery($sql_search_all_gender)[0];
+        $queryResult = Database::runSelectQuery($sql_search_all_gender);
         return $queryResult;
     }
 

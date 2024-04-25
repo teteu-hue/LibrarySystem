@@ -36,8 +36,6 @@ Class DbBook extends Database
                             VALUES(:nome, :id_genero, :preco, :numPage, :descricao)";
 
         $p_sql = $conn->prepare($sql_insert_book);
-
-        var_dump($p_sql);
         
         $data = [
             ":nome" => $name,
