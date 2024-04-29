@@ -43,6 +43,16 @@ class DbGenderBook extends Database
 
         return $p_sql->execute($data);
     }
+
+    public static function deleteGender($idGender){
+        $sql_delete_gender = "DELETE FROM genero WHERE genero.id_genero = $idGender";
+
+        $conn = Database::getConnection();
+
+        $p_sql = $conn->exec($sql_delete_gender);
+
+        return $p_sql;
+    }
 }
 
 ?>
