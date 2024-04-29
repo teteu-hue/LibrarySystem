@@ -9,7 +9,7 @@
         $email = $_POST['email'];
         $senha = $_POST['senha'];
 
-        $sql = "SELECTED * FROM Contato AND Usuario email=$email and senha=$senha";
+        $sql = "SELECTED * FROM Contato AND Usuario WHERE email=$email AND senha=$senha";
 
         $result = $conn->querry($sql);
 
