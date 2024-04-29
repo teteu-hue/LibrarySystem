@@ -1,0 +1,92 @@
+.welcome-admin {
+    font-size: 2rem;
+    margin-bottom: 4rem;
+  }
+
+  .text-title {
+    text-decoration: none;
+    color: white;
+    font-size: 4rem;
+    margin-bottom: 3rem;
+    transition: 1s;
+    cursor: pointer;
+    text-align: center;
+  }
+
+  .text-title:hover {
+    color: #c5c1c5;
+  }
+
+  .list-group {
+    margin-top: 2rem;
+
+  }
+
+  .list-group>.list-group-item {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .list-group>.list-group-item>.btn-group {
+    width: 100%;
+  }
+
+  .container-buttoms-icons {
+    height: 3rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .container-buttoms-icons-item {
+    font-size: 2rem;
+  }
+
+  .list-items {
+    margin-top: 1rem;
+  }
+
+  .container-buttoms {
+    width: 30rem;
+  }
+
+  .buttom-item {
+    margin-left: 2.5rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .buttom-item>.fa-solid,
+  span {
+    margin: 0.3rem;
+    font-size: 1.5rem;
+  }
+
+  .button-action {
+    margin-left: .8rem;
+  }
+
+  .dropdown-item-action {
+    text-decoration: none;
+    color: #FFF;
+  }
+
+  .buttom-publisher {
+    font-size: 2rem;
+  }
+
+  .container-publisher {
+    width: 100%;
+  }
+
+  .container-publisher-item {
+    text-align: center;
+  }
+
+  .badge{
+    cursor: pointer;
+  }
