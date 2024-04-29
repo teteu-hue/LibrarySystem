@@ -4,8 +4,6 @@ require_once("../controller/RootDir/RootDir.php");
 $rootDir = RootDir::getRealPath();
 
 require_once("$rootDir/model/Book/DbGenderBook.php");
-require("$rootDir/model/Address/Address.php");
-require("$rootDir/model/Book/Book.php");
 
 $genderBooks = DbGenderBook::getAllGender();
 
