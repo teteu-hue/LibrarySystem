@@ -51,11 +51,11 @@ $genderBooks = DbGenderBook::getAllGender();
                                 <?php  ?>
                             </div>
                             <div class="container-form-buttons d-flex justify-content-evenly" style="width: 10rem;">
-                                <form action="/LibrarySystem/controller/delete.php?<?php echo $row['id_genero'] ?>">
+                                <form method="POST" action="/LibrarySystem/controller/Gender/delete.php?id_genero=<?php echo $row["id_genero"]?>">
 
-                                    <a class="badge bg-danger rounded-pill">
+                                    <button type="submit" class="badge bg-danger rounded-pill">
                                         <i class="fa-solid fa-xmark"></i>
-                                    </a>
+                                    </button>
                                 </form>
 
                                 <form action="">
