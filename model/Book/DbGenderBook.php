@@ -10,41 +10,47 @@ class DbGenderBook extends Database
     {
     }
 
-    public static function getGenderById($idGender){
+    public static function getGenderById($idGender)
+    {
 
         $sql_search_gender = "SELECT * FROM genero WHERE id_genero = $idGender";
         $queryResult = Database::runSelectQuery($sql_search_gender);
         return $queryResult;
     }
 
-    public static function getAllGender(){
+    public static function getAllGender()
+    {
 
         $sql_search_all_gender = "SELECT * FROM Genero";
         $queryResult = Database::runSelectQuery($sql_search_all_gender);
         return $queryResult;
     }
 
-    public static function insertGender(GenderBook $genderBook){
-        if(!$genderBook){
+    public static function insertGender(GenderBook $genderBook)
+    {
+        if (!$genderBook) {
             die("Please Insert a Book");
         }
+
         $conn = Database::getConnection();
 
-        $name = $genderBook->getName();
-        
+        $name = strtoupper($genderBook->getName());
+
         $sql_insert_book = "INSERT INTO genero (nome_genero)  
                             VALUES(:nome_genero);";
 
         $p_sql = $conn->prepare($sql_insert_book);
-        
+
         $data = [
             ":nome_genero" => $name,
         ];
 
-        return $p_sql->execute($data);
+        $result = $p_sql->execute($data);
+        return $result;
     }
 
-    public static function deleteGender($idGender){
+    public static function deleteGender($idGender)
+    {
         $sql_delete_gender = "DELETE FROM genero WHERE genero.id_genero = $idGender";
 
         $conn = Database::getConnection();
@@ -54,5 +60,3 @@ class DbGenderBook extends Database
         return $p_sql;
     }
 }
-
-?>

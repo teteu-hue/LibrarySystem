@@ -5,18 +5,24 @@ $rootDir = RootDir::getRealPath();
 require_once("$rootDir/model/Book/DbGenderBook.php");
 
 
-if(isset($_POST["nome_genero"]) === TRUE){
+if(!empty($_POST["nome_genero"])){
     $gender = new GenderBook($_POST['nome_genero']);
-    $query = DbGenderBook::insertGender($gender);
 
-    if($query != NULL){
-        header('Location: /LibrarySystem/view/menu-admin-gender.php');
-    } else {
+    try {
 
+        $query = DbGenderBook::insertGender($gender);
+        
+        if($query != NULL){
+            header('Location: /LibrarySystem/view/menu-admin-gender.php');
+        } 
+
+    } catch(PDOException $e)
+    {
+            header('Location: /LibrarySystem/view/formCreateGender.php?error=2');
     }
 
 } else {
-    echo "Livro inválido";
+    header('Location: /LibrarySystem/view/formCreateGender.php?error=1');
 }
 
 ?>

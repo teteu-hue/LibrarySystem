@@ -9,7 +9,7 @@ require_once("$rootDir/model/Book/DbGenderBook.php");
 ?>
 
 <style>
-    .input-gender::placeholder{
+    .input-gender::placeholder {
         text-align: center;
     }
 </style>
@@ -22,11 +22,50 @@ require_once("$rootDir/model/Book/DbGenderBook.php");
         <div class="col">
 
             <form method="POST" action="/LibrarySystem/controller/Gender/add.php">
-                <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Gênero</label>
-                    <input type="text" name="nome_genero" placeholder="Digite o nome do gênero do livro" class="form-control input-gender" id="exampleInputEmail1" aria-describedby="emailHelp">
-                </div>
-                <button type="submit" class="btn btn-primary">Criar</button>
+                <?php
+
+
+                if (!isset($_GET["error"])) {
+                ?>
+                    <div class="mb-3">
+
+                        <label for="exampleInputEmail1" class="form-label">Gênero</label>
+                        <input type="text" name="nome_genero" placeholder="Digite o nome do gênero do livro" class="form-control input-gender" id="exampleInputEmail1" aria-describedby="emailHelp">
+
+                    </div>
+                    <button type="submit" class="btn btn-primary">Criar</button>
+                    <?php } else {
+                    $error = $_GET["error"];
+                    switch ($error) {
+
+                        case 1:
+                    ?>
+
+                            <div class="mb-3">
+
+                                <label for="exampleInputEmail1" class="form-label">Gênero <?php ?></label>
+                                <input type="text" name="nome_genero" placeholder="Insira um gênero válido" class="form-control input-gender" id="exampleInputEmail1" aria-describedby="emailHelp">
+
+                            </div>
+                            <button type="submit" class="btn btn-primary">Criar</button>
+
+                        <?php break;
+
+                        case 2: ?>
+                            <div class="mb-3">
+
+                                <label for="exampleInputEmail1" class="form-label">Gênero <?php ?></label>
+                                <input type="text" name="nome_genero" placeholder="Esse Gênero já existe no banco de dados" class="form-control input-gender" id="exampleInputEmail1" aria-describedby="emailHelp">
+
+                            </div>
+                            <button type="submit" class="btn btn-primary">Criar</button>
+
+                        <?php break;?>
+
+                    <?php   } ?>
+
+
+                <?php } ?>
             </form>
 
         </div>
