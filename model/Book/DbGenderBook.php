@@ -15,7 +15,12 @@ class DbGenderBook extends Database
 
         $sql_search_gender = "SELECT * FROM genero WHERE id_genero = $idGender";
         $queryResult = Database::runSelectQuery($sql_search_gender);
-        return $queryResult;
+        
+        if($queryResult->rowCount() > 0){
+            return $queryResult;
+        } else {
+            return NULL;
+        }
     }
 
     public static function getAllGender()
@@ -58,5 +63,25 @@ class DbGenderBook extends Database
         $p_sql = $conn->exec($sql_delete_gender);
 
         return $p_sql;
+    }
+
+    public static function editGender($idGender, $nameGender)
+    {
+        $conn = Database::getConnection();
+
+        $sql_update_gender = "UPDATE genero 
+                              SET nome_genero = :nome_genero 
+                              WHERE id_genero = :id_genero";
+
+        $data = [
+            "nome_genero" => $nameGender,
+            "id_genero" => $idGender
+        ];
+
+        $p_sql = $conn->prepare($sql_update_gender);
+        
+        $result = $p_sql->execute($data);
+
+
     }
 }

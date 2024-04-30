@@ -58,10 +58,10 @@ $genderBooks = DbGenderBook::getAllGender();
                                     </button>
                                 </form>
 
-                                <form action="">
-                                    <a class="badge bg-warning rounded-pill">
-                                        <i class="fa-solid fa-xmark"></i>
-                                    </a>
+                                <form method="POST" action="/LibrarySystem/controller/Gender/edit.php?id_genero=<?php echo $row["id_genero"]?>">
+                                    <button type="submit" class="badge bg-warning rounded-pill">
+                                        <i class="fa-solid fa-pen"></i>
+                                    </button>
                                 </form>
 
                             </div>

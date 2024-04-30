@@ -28,7 +28,13 @@ class Database
                     PDO::ATTR_EMULATE_PREPARES => false
                 ];
             }
-        } catch (Exception $e) {
+        } 
+        catch(PDOException $e)
+        {
+            echo $e->getMessage();
+        }
+        catch (Exception $e)
+        {
             echo "Unable to open " . $file;
         }
 
@@ -43,8 +49,7 @@ class Database
     {
         if (!empty($result)) 
         {
-            $query = $result->fetchAll();
-            return $query;
+            return $result;
         } else {
             return false;
         }

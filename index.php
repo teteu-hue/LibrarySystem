@@ -11,6 +11,12 @@
 
     include("$rootDir/view/header.php");
     include("$rootDir/view/home_page.php");
+
+    $query = DbGenderBook::editGender(70, "teste");
+    $result = DbGenderBook::getGenderById(70);
+    var_dump($result);
+    //var_dump($query);
+
     include("$rootDir/view/footer.php");
     
 ?>
