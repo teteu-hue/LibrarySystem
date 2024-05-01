@@ -44,6 +44,14 @@ $genderBooks = DbGenderBook::getAllGender();
 
                     <div class="dropdown-menu container-publisher">
 
+                        <?php if(empty($genderBooks)){ ?>
+
+                        <div class="dropdown-item  list-group-item d-flex justify-content-between align-items-start">
+                            <?php echo "Nenhum livro adicionado" ?>
+                        </div>
+
+                        <?php } else { ?>
+
                         <?php foreach($genderBooks as $row){ ?>
                         <div class="dropdown-item  list-group-item d-flex justify-content-between align-items-start">
                             <div class="ms-2 me-auto">
@@ -58,7 +66,7 @@ $genderBooks = DbGenderBook::getAllGender();
                                     </button>
                                 </form>
 
-                                <form method="POST" action="/LibrarySystem/controller/Gender/edit.php?id_genero=<?php echo $row["id_genero"]?>">
+                                <form method="POST" action="/LibrarySystem/controller/Gender/get.php?id_genero=<?php echo $row["id_genero"]?>">
                                     <button type="submit" class="badge bg-warning rounded-pill">
                                         <i class="fa-solid fa-pen"></i>
                                     </button>
@@ -66,7 +74,8 @@ $genderBooks = DbGenderBook::getAllGender();
 
                             </div>
                         </div>
-                        <?php } ?>
+                        <?php }
+                        } ?>
 
                     </div>
 

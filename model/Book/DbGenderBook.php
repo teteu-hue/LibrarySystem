@@ -19,7 +19,7 @@ class DbGenderBook extends Database
         if($queryResult->rowCount() > 0){
             return $queryResult;
         } else {
-            return NULL;
+            return;
         }
     }
 
@@ -28,7 +28,11 @@ class DbGenderBook extends Database
 
         $sql_search_all_gender = "SELECT * FROM Genero";
         $queryResult = Database::runSelectQuery($sql_search_all_gender);
-        return $queryResult;
+
+        if($queryResult->rowCount() > 0){
+            return $queryResult;
+        } 
+
     }
 
     public static function insertGender(GenderBook $genderBook)
@@ -74,14 +78,14 @@ class DbGenderBook extends Database
                               WHERE id_genero = :id_genero";
 
         $data = [
-            "nome_genero" => $nameGender,
-            "id_genero" => $idGender
+            "id_genero" => $idGender,
+            "nome_genero" => strtoupper($nameGender)
         ];
 
         $p_sql = $conn->prepare($sql_update_gender);
         
         $result = $p_sql->execute($data);
 
-
+        return $result;
     }
 }

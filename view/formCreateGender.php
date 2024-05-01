@@ -21,12 +21,12 @@ require_once("$rootDir/model/Book/DbGenderBook.php");
         </div>
         <div class="col">
 
+        <?php 
+            
+        ?>
+
             <form method="POST" action="/LibrarySystem/controller/Gender/add.php">
-                <?php
-
-
-                if (!isset($_GET["error"])) {
-                ?>
+                <?php if (!isset($_GET["error"])) { ?>
                     <div class="mb-3">
 
                         <label for="exampleInputEmail1" class="form-label">Gênero</label>
@@ -34,7 +34,7 @@ require_once("$rootDir/model/Book/DbGenderBook.php");
 
                     </div>
                     <button type="submit" class="btn btn-primary">Criar</button>
-                    <?php } else {
+                    <?php } else if(isset($_GET['error'])) {
                     $error = $_GET["error"];
                     switch ($error) {
 
@@ -65,17 +65,13 @@ require_once("$rootDir/model/Book/DbGenderBook.php");
                     <?php   } ?>
 
 
+                </form>
                 <?php } ?>
-            </form>
 
         </div>
         <div class="col">
         </div>
     </div>
 </div>
-
-<?php
-
-?>
 
 <?php include("$rootDir/view/footer.php"); ?>
