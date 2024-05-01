@@ -47,6 +47,16 @@ class DbPulisherBook extends Database
        
         return $result;
     }
+
+    public static function deletePublisher($idPublisher){
+        $conn = Database::getConnection();
+
+        $sql_delete_publisher = "DELETE FROM editora WHERE id_editora = $idPublisher";
+
+        $p_sql = $conn->exec($sql_delete_publisher);
+        
+        return $p_sql;
+    }
 }
 
 ?>

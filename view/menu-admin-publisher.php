@@ -50,12 +50,19 @@ $publishers = DbPulisherBook::getAllPublisher();
                                 <div class="fw-bold"><?php echo $row["nome_editora"]; ?></div>
                             </div>
                             <div class="d-flex justify-content-evenly" style="width: 10rem;">
-                                <a class="badge bg-danger rounded-pill">
-                                    <i class="fa-solid fa-xmark"></i>
-                                </a>
-                                <a class="badge bg-warning rounded-pill">
-                                    <i class="fa-solid fa-pen"></i>
-                                </a>
+
+                                <form method="POST" action="/LibrarySystem/controller/Publisher/delete.php?id_editora=<?php echo $row['id_editora']?>">
+                                    <button type="submit" class="badge bg-danger rounded-pill">
+                                        <i class="fa-solid fa-xmark"></i>
+                                    </button>
+                                </form>
+
+                                <form method="POST" action="/LibrarySystem/controller/Publisher/get.php">
+                                    <button type="submit" class="badge bg-warning rounded-pill">
+                                        <i class="fa-solid fa-pen"></i>
+                                    </button>
+                                </form>
+                                
                             </div>
                         </div>
                     <?php }?>
