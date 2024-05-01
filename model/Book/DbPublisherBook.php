@@ -9,14 +9,21 @@ class DbPulisherBook extends Database
     {
     }
 
-    public function getPublisherById($publisher)
+    public static function getPublisherById($publisher)
     {
         $sql_search_publisher = "SELECT * FROM editora WHERE id_editora = '$publisher'";
         $queryResult = Database::runSelectQuery($sql_search_publisher);
         return $queryResult;
     }
 
-    public function insertPublisher(PublisherBook $publisher){
+    public static function getAllPublisher()
+    {
+        $sql_search_all_publisher = "SELECT * FROM editora";
+        $queryResult = Database::runSelectQuery($sql_search_all_publisher);
+        return $queryResult;
+    }
+
+    public static function insertPublisher(PublisherBook $publisher){
         if(!$publisher){
             die("Please Insert a Publisher");
         }
@@ -36,8 +43,9 @@ class DbPulisherBook extends Database
             ":nome_editora" => $namePublisher
         ];
 
-        return $p_sql->execute($data);
+        $result =$p_sql->execute($data);
        
+        return $result;
     }
 }
 

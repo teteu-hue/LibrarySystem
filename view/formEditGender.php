@@ -27,7 +27,10 @@ require_once("$rootDir/model/Book/DbGenderBook.php");
             ?>
 
             <form method="POST" action="/LibrarySystem/controller/Gender/edit.php?id_genero=<?php echo $gender["id_genero"]; ?>">
-                <?php if (!isset($_GET["error"])) {
+                <?php 
+                
+                if (!isset($_GET["error"])) 
+                {
 
                 ?>
 
@@ -37,9 +40,15 @@ require_once("$rootDir/model/Book/DbGenderBook.php");
                     </div>
                     <button type="submit" class="btn btn-primary">Editar</button>
 
-                <?php } else { ?>
+                    <?php 
+                } 
+                else 
+                { 
+                    
+                    ?>
 
-                    <?php switch ($_GET["error"]) {
+                    <?php 
+                    switch ($_GET["error"]) {
 
 
 
@@ -51,10 +60,12 @@ require_once("$rootDir/model/Book/DbGenderBook.php");
                                 <input type="text" name="nome_genero" placeholder="Digite um gênero válido!" class="form-control input-gender" id="exampleInputEmail1" aria-describedby="emailHelp">
                             </div>
                             <button type="submit" class="btn btn-primary">Editar</button>
-                        <?php
+                    <?php
+
                             break;
 
-                        case 2: ?>
+                        case 2: 
+                    ?>
 
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Gênero <?php ?></label>
