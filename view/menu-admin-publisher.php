@@ -57,7 +57,7 @@ $publishers = DbPulisherBook::getAllPublisher();
                                     </button>
                                 </form>
 
-                                <form method="POST" action="/LibrarySystem/controller/Publisher/get.php">
+                                <form method="POST" action="/LibrarySystem/controller/Publisher/get.php?id_editora=<?php echo $row['id_editora']?>">
                                     <button type="submit" class="badge bg-warning rounded-pill">
                                         <i class="fa-solid fa-pen"></i>
                                     </button>

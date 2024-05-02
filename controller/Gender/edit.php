@@ -4,13 +4,6 @@ $rootDir = RootDir::getRealPath();
 
 require_once("$rootDir/model/Book/DbGenderBook.php");
 
-
-echo "<pre>";
-$idGender = $_GET['id_genero'];
-echo "<br>";
-var_dump($_POST['nome_genero']);
-
-
 if(!empty($_POST['nome_genero'])){
 
     try { 

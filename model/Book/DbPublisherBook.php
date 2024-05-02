@@ -57,6 +57,27 @@ class DbPulisherBook extends Database
         
         return $p_sql;
     }
+
+    public static function editPublisher($idPublisher, $namePublisher){
+        
+        $conn = Database::getConnection();
+
+        $sql_update_Publisher = "UPDATE genero 
+                              SET nome_genero = :nome_genero 
+                              WHERE id_genero = :id_genero";
+
+        $data = [
+            "id_genero" => $idPublisher,
+            "nome_genero" => strtoupper($namePublisher)
+        ];
+
+        $p_sql = $conn->prepare($sql_update_Publisher);
+        
+        $result = $p_sql->execute($data);
+
+        return $result;
+    
+    }
 }
 
 ?>
