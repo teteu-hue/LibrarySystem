@@ -6,13 +6,15 @@ require_once("$rootDir/model/Book/DbPublisherBook.php");
 
 if(!empty($_POST['nome_editora'])){
 
-    try { 
+    try 
+    { 
+        $idPublisher = $_GET['id_editora'];
+        $namePublisher = $_POST['nome_editora'];
+        $dbp = new DbPulisherBook();
+        $dbp->editPublisher($idPublisher, $namePublisher);
+        unset($dbp);
 
-    $idPublisher = $_GET['id_editora'];
-    $namePublisher = $_POST['nome_editora'];
-    DbPulisherBook::editPublisher($idPublisher, $namePublisher);
-    header("Location: /LibrarySystem/view/menu-admin-publisher.php");
-
+        header("Location: /LibrarySystem/view/menu-admin-publisher.php");
     } 
     catch (PDOException $e)
     {

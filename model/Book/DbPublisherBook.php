@@ -7,6 +7,7 @@ class DbPulisherBook extends Database
 
     public function __construct()
     {
+        parent::__construct();
     }
 
     public function getPublisherById($publisher)
@@ -18,7 +19,7 @@ class DbPulisherBook extends Database
 
     public function getAllPublisher()
     {
-        $sql_search_all_publisher = "SELECT * FROM editora";
+        $sql_search_all_publisher = "SELECT * FROM editora ORDER BY nome_editora ASC";
         $queryResult = $this->runSelectQuery($sql_search_all_publisher);
         return $queryResult;
     }
@@ -55,19 +56,17 @@ class DbPulisherBook extends Database
 
     public function editPublisher($idPublisher, $namePublisher){    
 
-        $sql_update_Publisher = "UPDATE genero 
-                              SET nome_genero = :nome_genero 
-                              WHERE id_genero = :id_genero";
+        $sql_update_publisher = "UPDATE editora 
+                              SET nome_editora = :nome_editora 
+                              WHERE id_editora = :id_editora";
 
         $data = [
-            "id_genero" => $idPublisher,
-            "nome_genero" => strtoupper($namePublisher)
+            "id_editora" => $idPublisher,
+            "nome_editora" => strtoupper($namePublisher)
         ];
 
-        $p_sql = $this->connection->prepare($sql_update_Publisher);
-        $result = $p_sql->execute($data);
+        $result = $this->connection->prepare($sql_update_publisher)->execute($data);
         return $result;
-    
     }
 }
 

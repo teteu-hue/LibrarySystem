@@ -8,7 +8,8 @@ require_once("$rootDir/model/Book/DbGenderBook.php");
 if(!empty($_POST["nome_genero"])){
     $gender = new GenderBook($_POST['nome_genero']);
 
-    try {
+    try 
+    {
 
         $dbg = new DbGenderBook();
         $query = $dbg->insertGender($gender);
@@ -18,9 +19,10 @@ if(!empty($_POST["nome_genero"])){
             header('Location: /LibrarySystem/view/menu-admin-gender.php');
         } 
 
-    } catch(PDOException $e)
+    } 
+    catch(PDOException $e)
     {
-            header('Location: /LibrarySystem/view/formCreateGender.php?error=2');
+        header('Location: /LibrarySystem/view/formCreateGender.php?error=2');
     }
 
 } else {

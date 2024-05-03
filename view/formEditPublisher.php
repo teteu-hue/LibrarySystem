@@ -21,8 +21,9 @@ require_once("$rootDir/model/Book/DbPublisherBook.php");
         <div class="col">
 
             <?php
+            $dbp = new DbPulisherBook();
 
-            $publisher = DbPulisherBook::getPublisherById($_GET['edit'])->fetch();
+            $publisher = $dbp->getPublisherById($_GET['edit'])->fetch();
 
             ?>
 
