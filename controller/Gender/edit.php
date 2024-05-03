@@ -10,7 +10,9 @@ if(!empty($_POST['nome_genero'])){
 
     $idGender = $_GET['id_genero'];
     $nameGender = $_POST['nome_genero'];
-    DbGenderBook::editGender($idGender, $nameGender);
+    $dbg = new DbGenderBook();
+    $dbg->editGender($idGender, $nameGender); 
+    unset($dbg);
     header("Location: /LibrarySystem/view/menu-admin-gender.php");
 
     } 

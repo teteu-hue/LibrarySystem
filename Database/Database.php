@@ -5,9 +5,14 @@ require("database_script.php");
 class Database
 {
 
-    private static $conn;
+    protected $connection;
 
-    public static function getConnection($file = "settings-database.ini")
+    public function __construct()
+    {
+        $this->connection = $this->getConnection();
+    }
+
+    protected function getConnection($file = "settings-database.ini")
     {
         try {
 
@@ -38,14 +43,14 @@ class Database
             echo "Unable to open " . $file;
         }
 
-        if (!isset(self::$conn)) {
-            self::$conn = new PDO($dsn, $user, $password, $options);
+        if (!isset($this->connection)) {
+            $this->connection = new PDO($dsn, $user, $password, $options);
         }
 
-        return self::$conn;
+        return $this->connection;
     }
 
-    public static function validateSelectQuery($result)
+    private function validateSelectQuery($result)
     {
         if (!empty($result)) 
         {
@@ -55,12 +60,13 @@ class Database
         }
     }
 
-    public static function runSelectQuery($result)
+    protected function runSelectQuery($result)
     { 
         try
         {
-            $query = Database::getConnection()->query($result);
-            $queryResult = Database::validateSelectQuery($query);
+            $query = $this->connection->query($result);
+            $queryResult = $this->validateSelectQuery($query);
+            
             return $queryResult;
         } 
         catch (PDOException $e)

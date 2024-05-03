@@ -8,13 +8,14 @@ class DbGenderBook extends Database
 
     public function __construct()
     {
+       parent::__construct();
     }
 
-    public static function getGenderById($idGender)
+    public function getGenderById($idGender)
     {
 
         $sql_search_gender = "SELECT * FROM genero WHERE id_genero = $idGender";
-        $queryResult = Database::runSelectQuery($sql_search_gender);
+        $queryResult = $this->runSelectQuery($sql_search_gender);
         
         if($queryResult->rowCount() > 0){
             return $queryResult;
@@ -23,11 +24,11 @@ class DbGenderBook extends Database
         }
     }
 
-    public static function getAllGender()
+    public function getAllGender()
     {
 
         $sql_search_all_gender = "SELECT * FROM Genero";
-        $queryResult = Database::runSelectQuery($sql_search_all_gender);
+        $queryResult = $this->runSelectQuery($sql_search_all_gender);
 
         if($queryResult->rowCount() > 0){
             return $queryResult;
@@ -35,20 +36,18 @@ class DbGenderBook extends Database
 
     }
 
-    public static function insertGender(GenderBook $genderBook)
+    public function insertGender(GenderBook $genderBook)
     {
         if (!$genderBook) {
             die("Please Insert a Book");
         }
-
-        $conn = Database::getConnection();
 
         $name = strtoupper($genderBook->getName());
 
         $sql_insert_book = "INSERT INTO genero (nome_genero)  
                             VALUES(:nome_genero);";
 
-        $p_sql = $conn->prepare($sql_insert_book);
+        $p_sql = $this->connection->prepare($sql_insert_book);
 
         $data = [
             ":nome_genero" => $name,
@@ -58,20 +57,18 @@ class DbGenderBook extends Database
         return $result;
     }
 
-    public static function deleteGender($idGender)
+    public function deleteGender($idGender)
     {
         $sql_delete_gender = "DELETE FROM genero WHERE genero.id_genero = $idGender";
 
-        $conn = Database::getConnection();
 
-        $p_sql = $conn->exec($sql_delete_gender);
+        $p_sql = $this->connection->exec($sql_delete_gender);
 
         return $p_sql;
     }
 
-    public static function editGender($idGender, $nameGender)
+    public function editGender($idGender, $nameGender)
     {
-        $conn = Database::getConnection();
 
         $sql_update_gender = "UPDATE genero 
                               SET nome_genero = :nome_genero 
@@ -82,9 +79,7 @@ class DbGenderBook extends Database
             "nome_genero" => strtoupper($nameGender)
         ];
 
-        $p_sql = $conn->prepare($sql_update_gender);
-        
-        $result = $p_sql->execute($data);
+        $result = $this->connection->prepare($sql_update_gender)->execute($data);
 
         return $result;
     }

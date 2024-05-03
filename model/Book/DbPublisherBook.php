@@ -9,33 +9,31 @@ class DbPulisherBook extends Database
     {
     }
 
-    public static function getPublisherById($publisher)
+    public function getPublisherById($publisher)
     {
         $sql_search_publisher = "SELECT * FROM editora WHERE id_editora = '$publisher'";
-        $queryResult = Database::runSelectQuery($sql_search_publisher);
+        $queryResult = $this->runSelectQuery($sql_search_publisher);
         return $queryResult;
     }
 
-    public static function getAllPublisher()
+    public function getAllPublisher()
     {
         $sql_search_all_publisher = "SELECT * FROM editora";
-        $queryResult = Database::runSelectQuery($sql_search_all_publisher);
+        $queryResult = $this->runSelectQuery($sql_search_all_publisher);
         return $queryResult;
     }
 
-    public static function insertPublisher(PublisherBook $publisher){
+    public function insertPublisher(PublisherBook $publisher){
         if(!$publisher){
             die("Please Insert a Publisher");
         }
-
-        $conn = Database::getConnection();
 
         $namePublisher = strtoupper($publisher->getNamePublisher());
 
         $sql_insert_publisher = "INSERT INTO editora (nome_editora)
                                  VALUES (:nome_editora);";
 
-        $p_sql = $conn->prepare($sql_insert_publisher);
+        $p_sql = $this->connection->prepare($sql_insert_publisher);
 
         var_dump($p_sql);
 
@@ -48,19 +46,14 @@ class DbPulisherBook extends Database
         return $result;
     }
 
-    public static function deletePublisher($idPublisher){
-        $conn = Database::getConnection();
-
-        $sql_delete_publisher = "DELETE FROM editora WHERE id_editora = $idPublisher";
-
-        $p_sql = $conn->exec($sql_delete_publisher);
+    public function deletePublisher($idPublisher){
         
+        $sql_delete_publisher = "DELETE FROM editora WHERE id_editora = $idPublisher";
+        $p_sql = $this->connection->exec($sql_delete_publisher);
         return $p_sql;
     }
 
-    public static function editPublisher($idPublisher, $namePublisher){
-        
-        $conn = Database::getConnection();
+    public function editPublisher($idPublisher, $namePublisher){    
 
         $sql_update_Publisher = "UPDATE genero 
                               SET nome_genero = :nome_genero 
@@ -71,10 +64,8 @@ class DbPulisherBook extends Database
             "nome_genero" => strtoupper($namePublisher)
         ];
 
-        $p_sql = $conn->prepare($sql_update_Publisher);
-        
+        $p_sql = $this->connection->prepare($sql_update_Publisher);
         $result = $p_sql->execute($data);
-
         return $result;
     
     }

@@ -8,9 +8,18 @@ require_once("$rootDir/model/Book/DbGenderBook.php");
 if($_GET["id_genero"] > 0){
     $id_gender = $_GET["id_genero"];
 
-    DbGenderBook::deleteGender($id_gender);
-
-    header('Location: /LibrarySystem/view/menu-admin-gender.php');
+    $dbg = new DbGenderBook();
+    $gender = $dbg->getGenderById($id_gender);
+    
+    if($gender == NULL)
+    {
+        header('Location: /LibrarySystem/index.php');
+    } 
+    else 
+    {
+        $dbg->deleteGender($id_gender);
+        header('Location: /LibrarySystem/view/menu-admin-gender.php');
+    }
 }
 
 ?>

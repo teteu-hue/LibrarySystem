@@ -21,8 +21,9 @@ require_once("$rootDir/model/Book/DbGenderBook.php");
         <div class="col">
 
             <?php
+            $dbg = new DbGenderBook();
 
-            $gender = DbGenderBook::getGenderById($_GET['edit'])->fetch();
+            $gender = $dbg->getGenderById($_GET['edit'])->fetch();
 
             ?>
 
@@ -84,5 +85,7 @@ require_once("$rootDir/model/Book/DbGenderBook.php");
         </div>
     </div>
 </div>
+
+<?php unset($dbg); ?>
 
 <?php include("$rootDir/view/footer.php"); ?>

@@ -10,7 +10,9 @@ if(!empty($_POST["nome_genero"])){
 
     try {
 
-        $query = DbGenderBook::insertGender($gender);
+        $dbg = new DbGenderBook();
+        $query = $dbg->insertGender($gender);
+        unset($dbg);
         
         if($query != NULL){
             header('Location: /LibrarySystem/view/menu-admin-gender.php');

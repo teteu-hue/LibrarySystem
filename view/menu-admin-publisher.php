@@ -11,7 +11,8 @@ $rootDir = RootDir::getRealPath();
 
 require_once("$rootDir/model/Book/DbPublisherBook.php");
 
-$publishers = DbPulisherBook::getAllPublisher();
+$dbp = new DbPulisherBook();
+$publishers = $dbp->getAllPublisher();
 
 ?>
 
@@ -79,9 +80,7 @@ $publishers = DbPulisherBook::getAllPublisher();
     <div class="col"></div>
 </div>
 
-
-
-
-
-
-<?php require_once("footer.php") ?>
+<?php
+unset($dbp);
+require_once("footer.php"); 
+?>

@@ -7,7 +7,9 @@ $rootDir = RootDir::getRealPath();
 
 require_once("$rootDir/model/Book/DbGenderBook.php");
 
-$genderBooks = DbGenderBook::getAllGender();
+$dbg = new DbGenderBook();
+
+$genderBooks = $dbg->getAllGender();
 
 ?>
 
@@ -89,8 +91,7 @@ $genderBooks = DbGenderBook::getAllGender();
 </div>
 
 
-
-
-
-
-<?php require_once("footer.php") ?>
+<?php
+unset($dbg); 
+require_once("footer.php"); 
+?>
