@@ -4,17 +4,23 @@ require_once("../controller/RootDir/RootDir.php");
 $rootDir = RootDir::getRealPath();
 
 require_once("$rootDir/model/Book/DbGenderBook.php");
+require_once("$rootDir/model/Book/DbPublisherBook.php");
 
-$genderBooks = DbGenderBook::getAllGender();
+$dbg = new DbGenderBook();
+$dbp = new DbPulisherBook();
 
+$genderBooks = $dbg->getAllGender();
+$publisherBooks = $dbp->getAllPublisher();
+
+require("header.php");
 ?>
-<?php require("header.php"); ?>
 
-<form class="row g-3 createBookForm" action="acao.php" method="post">
+
+<form class="row g-3 createBookForm" action="/LibrarySystem/view/formCreateBook.php" method="post">
 
   <div class="col-md-6">
     <label for="inputNameBook" class="form-label">Nome do Livro</label>
-    <input type="text" class="form-control" name="nome_livro" id="inputNameBook">
+    <input type="text" class="form-control" name="nome_livro" id="inputNameBook" required>
   </div>
 
   <div class="col-md-4">
@@ -34,13 +40,29 @@ $genderBooks = DbGenderBook::getAllGender();
   </div>
 
   <div class="col-md-6">
+
+    <label for="inputState" class="form-label">Editora</label>
+    <a href="formCreateGender.php" class=" m-3 btn btn-outline-primary btn-sm fs-5">+</a>
+
+    <select class="form-select" name="id_genero" id="">
+
+      <?php foreach ($publisherBooks as $row) { ?>
+        <option class="option fs-2" value="<?php echo $row['id_editora'] ?>">
+          <?php echo $row['nome_editora'] ?>
+        </option>
+      <?php } ?>
+
+    </select>
+  </div>
+
+  <div class="col-md-6">
     <label for="inputPrice" class="form-label">Price</label>
-    <input type="number" name="preco" class="form-control" id="inputPrice">
+    <input type="number" name="preco" class="form-control" id="inputPrice" required>
   </div>
 
   <div class="col-md-6">
     <label for="inputNumPage" class="form-label">Número de Páginas</label>
-    <input type="text" name="numero_paginas" class="form-control" id="inputNumPage">
+    <input type="text" name="numero_paginas" class="form-control" id="inputNumPage" required>
   </div>
 
   <div class="col-md-6">
@@ -61,4 +83,6 @@ $genderBooks = DbGenderBook::getAllGender();
 
 </form>
 
-<?php require("footer.php") ?>
+<?php 
+unset($dbp, $dbg);
+require("footer.php") ?>
