@@ -45,7 +45,6 @@ $books = $dBook->getAllBook();
                             <div class="dropdown-item  list-group-item d-flex justify-content-between align-items-end">
                                 <div class="ms-2 me-auto">
                                     <div class="fw-bold"><?php echo $row['nome_livro'] ?></div>
-                                    <?php echo $row['descricao'] ?>
                                 </div>
                                 <div class="d-flex justify-content-evenly" style="width: 10rem;">
                                     <form method="POST" action="/LibrarySystem/controller/Book/delete.php?id_livro=<?php echo $row["id_livro"] ?>">

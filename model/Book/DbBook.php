@@ -5,7 +5,7 @@ require_once("$rootDir/model/Book/Book.php");
 require_once("$rootDir/model/Book/DbPublisherBook.php");
 require_once("$rootDir/model/Book/DbGenderBook.php");
 
-Class DbBook extends Database
+class DbBook extends Database
 {
 
     public function __construct()
@@ -13,53 +13,62 @@ Class DbBook extends Database
         parent::__construct();
     }
 
-    public function getBookById($idBook){
-        
+    public function getBookById($idBook)
+    {
+
         $sql_search_book = "SELECT * FROM Livro WHERE id_livro = $idBook";
         $queryResult = $this->runSelectQuery($sql_search_book);
         return $queryResult;
     }
 
-    public function getAllBook(){
+    public function getAllBook()
+    {
 
         $sql_search_all_book = "SELECT * FROM Livro";
         $queryResult = $this->runSelectQuery($sql_search_all_book);
         return $queryResult;
     }
 
-    public function insertBook(Book $book){
-        if(!$book){
+    public function insertBook(Book $book)
+    {
+        $dbg = new DbGenderBook();
+        $dbp = new DbPulisherBook();
+
+        if (!$book) {
             die("Please Insert a Book");
         }
-        
+
         $name = $book->getNameBook();
 
-        $genderBook = $book->getGenderBook()->getName();
-        $publisherBook = $book->getPublisherBook()->getNamePublisher();
+        $genderBook = $dbg->getGenderByName($book->getGenderBook()->getName())->fetch();
+        $publisherBook = $dbp->getPublisherByName($book->getPublisherBook()->getNamePublisher())->fetch();
+
+        $idGender = $genderBook["id_genero"];
+        $idPublisher = $publisherBook["id_editora"];
 
         $preco = $book->getPrice();
         $numPage = $book->getNumPage();
         $description = $book->getDescription();
-        $sql_insert_book = "INSERT INTO Livro (nome_livro, id_genero, id_editora, preco, numeroDePaginas, descricao)  
-                            VALUES(:nome, :id_genero, :id_editora,:preco, :numPage, :descricao)";
+        $sql_insert_book = "INSERT INTO Livro (nome_livro, id_genero, id_editora, preco, numero_paginas, descricao)  
+                            VALUES(:nome, :id_genero, :id_editora,:preco, :numero_paginas, :descricao)";
 
         $p_sql = $this->connection->prepare($sql_insert_book);
-        
+
         $data = [
             ":nome" => $name,
-            ":id_genero" => $genderBook,
-            ":id_editora" => $publisherBook,
+            ":id_genero" => $idGender,
+            ":id_editora" => $idPublisher,
             ":preco" => $preco,
-            ":numPage" => $numPage,
+            ":numero_paginas" => $numPage,
             ":descricao" => $description
         ];
 
         return $p_sql->execute($data);
-    
-}
+    }
 
-    public function getBookAndGenderByID($id_book){
-       
+    public function getBookAndGenderByID($id_book)
+    {
+
         $sql_search_book = "SELECT id_livro, nome_livro, preco, nome_genero, numeroDePaginas
                             FROM Livro 
                             INNER JOIN Genero ON Genero.id_genero = Livro.id_genero
@@ -70,4 +79,3 @@ Class DbBook extends Database
         return $queryResult;
     }
 }
-?>

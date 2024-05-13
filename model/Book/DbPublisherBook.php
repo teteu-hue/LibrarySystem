@@ -24,7 +24,22 @@ class DbPulisherBook extends Database
         return $queryResult;
     }
 
-    public function insertPublisher(PublisherBook $publisher){
+    public function getPublisherByName($namePublisher){
+        $sql_search_publisher_by_name = "SELECT *
+                                         FROM editora
+                                         WHERE nome_editora = '$namePublisher'";
+        
+        $p_sql = $this->runSelectQuery($sql_search_publisher_by_name);
+        
+        if($p_sql->rowCount() > 0){
+            return $p_sql;
+        } else {
+            return false;
+        }
+    }
+
+    public function insertPublisher(PublisherBook $publisher)
+    {
         if(!$publisher){
             die("Please Insert a Publisher");
         }
@@ -45,14 +60,16 @@ class DbPulisherBook extends Database
         return $result;
     }
 
-    public function deletePublisher($idPublisher){
+    public function deletePublisher($idPublisher)
+    {
         
         $sql_delete_publisher = "DELETE FROM editora WHERE id_editora = $idPublisher";
         $p_sql = $this->connection->exec($sql_delete_publisher);
         return $p_sql;
     }
 
-    public function editPublisher($idPublisher, $namePublisher){    
+    public function editPublisher($idPublisher, $namePublisher)
+    {    
 
         $sql_update_publisher = "UPDATE editora 
                               SET nome_editora = :nome_editora 

@@ -36,6 +36,21 @@ class DbGenderBook extends Database
 
     }
 
+    public function getGenderByName($genderName)
+    {
+        $sql_search_gender_by_name = "SELECT * 
+                                      FROM genero
+                                      WHERE nome_genero = '$genderName'";
+
+        $p_sql = $this->runSelectQuery($sql_search_gender_by_name);
+        
+        if($p_sql->rowCount() > 0){
+            return $p_sql;
+        } else {
+            return false;
+        }
+    }
+
     public function insertGender(GenderBook $genderBook)
     {
         if (!$genderBook) {
