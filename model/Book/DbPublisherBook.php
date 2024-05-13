@@ -36,8 +36,6 @@ class DbPulisherBook extends Database
 
         $p_sql = $this->connection->prepare($sql_insert_publisher);
 
-        var_dump($p_sql);
-
         $data = [
             ":nome_editora" => $namePublisher
         ];

@@ -3,7 +3,7 @@ require_once("../controller/RootDir/RootDir.php");
 
 $rootDir = RootDir::getRealPath();
 
-require_once("$rootDir/model/Book/DbGenderBook.php");
+require_once("$rootDir//model/Book/DbGenderBook.php");
 require_once("$rootDir/model/Book/DbPublisherBook.php");
 
 $dbg = new DbGenderBook();
@@ -16,7 +16,7 @@ require("header.php");
 ?>
 
 
-<form class="row g-3 createBookForm" action="/LibrarySystem/view/formCreateBook.php" method="post">
+<form class="row g-3 createBookForm" action="/LibrarySystem/controller/Book/add.php" method="post">
 
   <div class="col-md-6">
     <label for="inputNameBook" class="form-label">Nome do Livro</label>
@@ -44,7 +44,7 @@ require("header.php");
     <label for="inputState" class="form-label">Editora</label>
     <a href="formCreateGender.php" class=" m-3 btn btn-outline-primary btn-sm fs-5">+</a>
 
-    <select class="form-select" name="id_genero" id="">
+    <select class="form-select" name="id_editora" id="">
 
       <?php foreach ($publisherBooks as $row) { ?>
         <option class="option fs-2" value="<?php echo $row['id_editora'] ?>">
@@ -67,8 +67,7 @@ require("header.php");
 
   <div class="col-md-6">
     <label for="inputNumPage" class="form-label">Descrição</label>
-    <textarea type="text" cols="50" rows="4" name="descricao" class="form-control" id="inputNumPage">
-    </textarea>
+    <textarea type="text" cols="50" rows="4" name="descricao" class="form-control" id="inputNumPage"></textarea>
     <style>
       textarea {
         resize: none;
