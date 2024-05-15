@@ -40,11 +40,8 @@ class DbBook extends Database
 
         $name = $book->getNameBook();
 
-        $genderBook = $dbg->getGenderByName($book->getGenderBook()->getName())->fetch();
-        $publisherBook = $dbp->getPublisherByName($book->getPublisherBook()->getNamePublisher())->fetch();
-
-        $idGender = $genderBook["id_genero"];
-        $idPublisher = $publisherBook["id_editora"];
+        $idGender = $dbg->getGenderByName($book->getGenderBook()->getName())->fetch()["id_genero"];
+        $idPublisher = $dbp->getPublisherByName($book->getPublisherBook()->getNamePublisher())->fetch()["id_editora"];
 
         $preco = $book->getPrice();
         $numPage = $book->getNumPage();
@@ -77,5 +74,14 @@ class DbBook extends Database
 
         $queryResult = $this->runSelectQuery($sql_search_book)[0];
         return $queryResult;
+    }
+
+    public function deleteBook($idBook)
+    {
+        
+        $book = $this->getBookById($idBook)->fetch()["id_livro"];
+        $sql_delete_book = "DELETE FROM livro WHERE id_livro = $book";
+        $p_sql = $this->connection->exec($sql_delete_book);
+        return $p_sql;
     }
 }
