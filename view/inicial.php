@@ -1,8 +1,10 @@
+
+?>
 <?php include "header.php" ?>
 
 <div class="container text-center">
     <div class="col">
-     <h1>Bem vindo ao sistema de gerenciamento do Matheus e Rodrigo</h1>      
+     <h1>Bem vindo <?php echo htmlspecialchars($_SESSION['username'])?> ao sistema de gerenciamento do Matheus e Rodrigo</h1>      
     </div>
 </div>
 
