@@ -84,4 +84,17 @@ class DbBook extends Database
         $p_sql = $this->connection->exec($sql_delete_book);
         return $p_sql;
     }
+
+    public function editBook($idBook, $nameBook, $price, $description, $id_gender, $id_editora, $numPage)
+    {
+        $sql_update_book = "UPDATE livro 
+                              SET 
+                              nome_livro = :nome_livro
+                              preco = :preco
+                              descricao = :descricao
+                              id_genero = :id_genero
+                              id_editora = :id_editora
+                              numero_paginas = :numero_paginas
+                              WHERE id_livro = :id_livro";
+    }
 }
