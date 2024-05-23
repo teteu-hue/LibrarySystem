@@ -72,7 +72,16 @@ class DbBook extends Database
                             WHERE Livro.id_livro = $id_book;
         ";
 
-        $queryResult = $this->runSelectQuery($sql_search_book)[0];
+        $queryResult = $this->runSelectQuery($sql_search_book);
+        return $queryResult;
+    }
+
+    public function getAllBookAndGender(){
+        $sql_search_all_book_and_gender = "SELECT nome_livro, preco, numero_paginas, descricao, nome_genero
+                            FROM livro
+                            INNER JOIN genero ON genero.id_genero = livro.id_genero";
+
+        $queryResult = $this->runSelectQuery($sql_search_all_book_and_gender);
         return $queryResult;
     }
 

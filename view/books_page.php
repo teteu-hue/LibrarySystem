@@ -6,7 +6,7 @@ $rootDir = RootDir::getRealPath();
 require_once("$rootDir/model/Book/DbBook.php");
 $db = new DbBook();
 
-$books = $db->getAllBook();
+$books = $db->getAllBookAndGender();
 
 ?>
 
@@ -55,11 +55,11 @@ $books = $db->getAllBook();
                         <?php } ?>
 
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item">An item</li>
-                            <li class="list-group-item">A second item</li>
-                            <li class="list-group-item">A third item</li>
+                            <li class="list-group-item"><?php echo $row["nome_genero"] ?></li>
+                            <li class="list-group-item">R$<?php echo $row["preco"] ?></li>
+                            <li class="list-group-item">Número de páginas: <?php echo $row["numero_paginas"] ?></li>
                         </ul>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <a href="#" class="btn btn-primary">Ver produto</a>
                     </div>
 
                 </div>
