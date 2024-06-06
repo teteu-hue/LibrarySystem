@@ -1,9 +1,9 @@
 <?php
 
-require_once("$rootDir/Database/Database.php");
-require_once("$rootDir/model/Book/Book.php");
-require_once("$rootDir/model/Book/DbPublisherBook.php");
-require_once("$rootDir/model/Book/DbGenderBook.php");
+require_once("../Database/Database.php");
+require_once("./Book/Book.php");
+require_once("./Book/DbPublisherBook.php");
+require_once("./Book/DbGenderBook.php");
 
 class DbBook extends Database
 {
