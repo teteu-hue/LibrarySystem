@@ -14,15 +14,15 @@ if(!empty($_POST['nome_editora'])){
         $dbp->editPublisher($idPublisher, $namePublisher);
         unset($dbp);
 
-        header("Location: /LibrarySystem/view/menu-admin-publisher.php");
+        header("Location: /php07/LibrarySystem/view/menu-admin-publisher.php");
     } 
     catch (PDOException $e)
     {
-        header("Location: /LibrarySystem/view/formEditPublisher.php?error=2&edit=$idPublisher");
+        header("Location: /php07/LibrarySystem/view/formEditPublisher.php?error=2&edit=$idPublisher");
     }
     
 } else {
-    header("Location: /LibrarySystem/view/formEditPublisher.php?error=1&edit=$idPublisher");
+    header("Location: /php07/LibrarySystem/view/formEditPublisher.php?error=1&edit=$idPublisher");
 }
 
 ?>

@@ -15,13 +15,13 @@ if(!empty($_POST["nome_editora"])){
         unset($dbp);
         
         if($query != NULL){
-            header('Location: /LibrarySystem/view/menu-admin-publisher.php');
+            header('Location: /php07/LibrarySystem/view/menu-admin-publisher.php');
         } 
 
     } 
     catch(PDOException $e)
     {
-            header('Location: /LibrarySystem/view/formCreatePublisher.php?error=2');
+            header('Location: /php07/LibrarySystem/view/formCreatePublisher.php?error=2');
     }
 
 } else {

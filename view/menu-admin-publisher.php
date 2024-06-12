@@ -1,5 +1,5 @@
 <?php require_once("header.php") ?>
-<link rel="stylesheet" href="/LibrarySystem/css/menu-admin.css">
+<link rel="stylesheet" href="/php07/LibrarySystem/css/menu-admin.css">
 
 <?php
 
@@ -52,13 +52,13 @@ $publishers = $dbp->getAllPublisher();
                             </div>
                             <div class="d-flex justify-content-evenly" style="width: 10rem;">
 
-                                <form method="POST" action="/LibrarySystem/controller/Publisher/delete.php?id_editora=<?php echo $row['id_editora']?>">
+                                <form method="POST" action="/php07/LibrarySystem/controller/Publisher/delete.php?id_editora=<?php echo $row['id_editora']?>">
                                     <button type="submit" class="badge bg-danger rounded-pill">
                                         <i class="fa-solid fa-xmark"></i>
                                     </button>
                                 </form>
 
-                                <form method="POST" action="/LibrarySystem/controller/Publisher/get.php?id_editora=<?php echo $row['id_editora']?>">
+                                <form method="POST" action="/php07/LibrarySystem/controller/Publisher/get.php?id_editora=<?php echo $row['id_editora']?>">
                                     <button type="submit" class="badge bg-warning rounded-pill">
                                         <i class="fa-solid fa-pen"></i>
                                     </button>

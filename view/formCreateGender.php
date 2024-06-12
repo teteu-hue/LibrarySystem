@@ -25,7 +25,7 @@ require_once("$rootDir/model/Book/DbGenderBook.php");
             
         ?>
 
-            <form method="POST" action="/LibrarySystem/controller/Gender/add.php">
+            <form method="POST" action="/php07/LibrarySystem/controller/Gender/add.php">
                 <?php if (!isset($_GET["error"])) { ?>
                     <div class="mb-3">
 

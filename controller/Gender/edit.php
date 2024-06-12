@@ -13,15 +13,15 @@ if(!empty($_POST['nome_genero'])){
         $dbg = new DbGenderBook();
         $dbg->editGender($idGender, $nameGender); 
         unset($dbg);
-        header("Location: /LibrarySystem/view/menu-admin-gender.php");
+        header("Location: /php07/LibrarySystem/view/menu-admin-gender.php");
     } 
     catch (PDOException $e)
     {
-        header("Location: /LibrarySystem/view/formEditGender.php?error=2&edit=$idGender");
+        header("Location: /php07/LibrarySystem/view/formEditGender.php?error=2&edit=$idGender");
     }
     
 } else {
-    header("Location: /LibrarySystem/view/formEditGender.php?error=1&edit=$idGender");
+    header("Location: /php07/LibrarySystem/view/formEditGender.php?error=1&edit=$idGender");
 }
 
 ?>

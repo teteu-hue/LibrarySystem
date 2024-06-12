@@ -29,7 +29,7 @@ try
     $book = new Book($nameBook, $gender, $publisher, $price, $numPages, $description);
 
     $db->insertBook($book);
-    header('Location: /LibrarySystem/view/menu-admin-book.php');
+    header('Location: /php07/LibrarySystem/view/menu-admin-book.php');
 } 
 catch (PDOException $e) 
 {
