@@ -1,6 +1,6 @@
 <?php
 
-require_once("../../Database/Database.php");
+require_once("./Database/Database.php");
 require_once("./Book.php");
 require_once("./DbPublisherBook.php");
 require_once("./DbGenderBook.php");
