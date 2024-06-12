@@ -78,7 +78,7 @@ class DbBook extends Database
 
     public function getAllBookAndGender(){
         $sql_search_all_book_and_gender = "SELECT nome_livro, preco, numero_paginas, descricao, nome_genero
-                            FROM livro
+                            FROM Livro
                             INNER JOIN genero ON genero.id_genero = livro.id_genero";
 
         $queryResult = $this->runSelectQuery($sql_search_all_book_and_gender);
