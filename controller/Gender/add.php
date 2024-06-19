@@ -16,7 +16,7 @@ if(!empty($_POST["nome_genero"])){
         unset($dbg);
         
         if($query != NULL){
-            header('Location: /LibrarySystem/view/menu-admin-gender.php');
+            header('Location: /php07/LibrarySystem/view/menu-admin-gender.php');
         } 
 
     } 

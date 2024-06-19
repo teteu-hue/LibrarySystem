@@ -12,21 +12,21 @@ class DbPulisherBook extends Database
 
     public function getPublisherById($publisher)
     {
-        $sql_search_publisher = "SELECT * FROM editora WHERE id_editora = '$publisher'";
+        $sql_search_publisher = "SELECT * FROM Editora WHERE id_editora = '$publisher'";
         $queryResult = $this->runSelectQuery($sql_search_publisher);
         return $queryResult;
     }
 
     public function getAllPublisher()
     {
-        $sql_search_all_publisher = "SELECT * FROM editora ORDER BY nome_editora ASC";
+        $sql_search_all_publisher = "SELECT * FROM Editora ORDER BY nome_editora ASC";
         $queryResult = $this->runSelectQuery($sql_search_all_publisher);
         return $queryResult;
     }
 
     public function getPublisherByName($namePublisher){
         $sql_search_publisher_by_name = "SELECT *
-                                         FROM editora
+                                         FROM Editora
                                          WHERE nome_editora = '$namePublisher'";
         
         $p_sql = $this->runSelectQuery($sql_search_publisher_by_name);
@@ -46,7 +46,7 @@ class DbPulisherBook extends Database
 
         $namePublisher = strtoupper($publisher->getNamePublisher());
 
-        $sql_insert_publisher = "INSERT INTO editora (nome_editora)
+        $sql_insert_publisher = "INSERT INTO Editora (nome_editora)
                                  VALUES (:nome_editora);";
 
         $p_sql = $this->connection->prepare($sql_insert_publisher);
@@ -63,7 +63,7 @@ class DbPulisherBook extends Database
     public function deletePublisher($idPublisher)
     {
         
-        $sql_delete_publisher = "DELETE FROM editora WHERE id_editora = $idPublisher";
+        $sql_delete_publisher = "DELETE FROM Editora WHERE id_editora = $idPublisher";
         $p_sql = $this->connection->exec($sql_delete_publisher);
         return $p_sql;
     }
@@ -71,7 +71,7 @@ class DbPulisherBook extends Database
     public function editPublisher($idPublisher, $namePublisher)
     {    
 
-        $sql_update_publisher = "UPDATE editora 
+        $sql_update_publisher = "UPDATE Editora 
                               SET nome_editora = :nome_editora 
                               WHERE id_editora = :id_editora";
 

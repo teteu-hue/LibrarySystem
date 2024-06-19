@@ -6,7 +6,7 @@ $rootDir = RootDir::getRealPath();
 require_once("$rootDir/model/Book/DbBook.php");
 $db = new DbBook();
 
-$books = $db->getAllBook();
+$books = $db->getAllBookAndGender();
 
 ?>
 
@@ -36,36 +36,41 @@ $books = $db->getAllBook();
 <div class="container text-center d-flex justify-content align-items" style="width: 90%;">
     <div class="row d-flex flex-flow" style="width:100%">
 
-        <?php foreach ($books as $row) { ?>
+        <?php if(!empty($books)){ ?>
 
-            <div class="col">
-                <div class="card" style="width: 20rem; margin-top:2rem;">
-                    <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title"><?php echo $row["nome_livro"] ?></h5>
-                        
-                        <?php if ($row["descricao"] == NULL) { ?>
-
-                            <p class="card-text text-danger">Nenhuma Descrição cadastrada</p>
-
-                        <?php } else { ?>
-
-                            <p class="card-text text-danger"><?php $row["descricao"] ?></p>
-
-                        <?php } ?>
-
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">An item</li>
-                            <li class="list-group-item">A second item</li>
-                            <li class="list-group-item">A third item</li>
-                        </ul>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-
-                </div>
-            </div>
-
-        <?php }; ?>
+            <?php foreach ($books as $row) { ?>
+                
+                <div class="col">
+                    <div class="card" style="width: 20rem; margin-top:2rem;">
+                        <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title"><?php echo $row["nome_livro"] ?></h5>
+                            
+                            <?php if ($row["descricao"] == NULL) { ?>
+                                
+                                <p class="card-text text-danger">Nenhuma Descrição cadastrada</p>
+                                
+                                <?php } else { ?>
+                                    
+                                    <p class="card-text text-danger"><?php $row["descricao"] ?></p>
+                                    
+                                    <?php } ?>
+                                    
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item"><?php echo $row["nome_genero"] ?></li>
+                                        <li class="list-group-item">R$<?php echo $row["preco"] ?></li>
+                                        <li class="list-group-item">Número de páginas: <?php echo $row["numero_paginas"] ?></li>
+                                        </ul>
+                                        <a href="#" class="btn btn-primary">Ver produto</a>
+                                        </div>
+                                        
+                                        </div>
+                                        </div>
+                                        
+                                        <?php }; ?>
+                                        <?php } else { ?>
+                                            <h1>Nenhum Livro cadastrado</h1>
+                                        <?php } ?>
 
 
     </div>

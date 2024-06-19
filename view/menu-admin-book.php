@@ -10,7 +10,7 @@ $dBook = new DbBook();
 $books = $dBook->getAllBook();
 
 ?>
-<link rel="stylesheet" href="/LibrarySystem/css/menu-admin.css">
+<link rel="stylesheet" href="/php07/LibrarySystem/css/menu-admin.css">
 
 <div class="row">
     <div class="col"></div>

@@ -11,7 +11,7 @@ if(isset($_GET["id_editora"])){
     try {
        
 
-       header("Location: /LibrarySystem/view/formEditPublisher.php?edit=$id_publisher");
+       header("Location: /php07/LibrarySystem/view/formEditPublisher.php?edit=$id_publisher");
     } catch(PDOException $e){
         echo $e->getMessage();
     }

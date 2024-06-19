@@ -2,6 +2,9 @@
 
 require("database_script.php");
 
+// ssh grupophp07@192.168.8.10 -> grupo07 -> 1234
+// mysql mysql -u grupo07 -p -> grupo07 -> php02
+
 class Database
 {
 

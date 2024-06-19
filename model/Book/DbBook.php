@@ -1,9 +1,9 @@
 <?php
 
-require_once("$rootDir/Database/Database.php");
-require_once("$rootDir/model/Book/Book.php");
-require_once("$rootDir/model/Book/DbPublisherBook.php");
-require_once("$rootDir/model/Book/DbGenderBook.php");
+require_once("/var/www/html/php07/LibrarySystem/Database/Database.php");
+require_once("Book.php");
+require_once("DbPublisherBook.php");
+require_once("DbGenderBook.php");
 
 class DbBook extends Database
 {
@@ -72,7 +72,16 @@ class DbBook extends Database
                             WHERE Livro.id_livro = $id_book;
         ";
 
-        $queryResult = $this->runSelectQuery($sql_search_book)[0];
+        $queryResult = $this->runSelectQuery($sql_search_book);
+        return $queryResult;
+    }
+
+    public function getAllBookAndGender(){
+        $sql_search_all_book_and_gender = "SELECT nome_livro, preco, numero_paginas, descricao, nome_genero
+                            FROM Livro
+                            INNER JOIN genero ON genero.id_genero = livro.id_genero";
+
+        $queryResult = $this->runSelectQuery($sql_search_all_book_and_gender);
         return $queryResult;
     }
 

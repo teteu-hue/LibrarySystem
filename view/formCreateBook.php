@@ -42,7 +42,7 @@ require("header.php");
   <div class="col-md-6">
 
     <label for="inputState" class="form-label">Editora</label>
-    <a href="formCreateGender.php" class=" m-3 btn btn-outline-primary btn-sm fs-5">+</a>
+    <a href="formCreatePublisher.php" class=" m-3 btn btn-outline-primary btn-sm fs-5">+</a>
 
     <select class="form-select" name="id_editora" id="">
 

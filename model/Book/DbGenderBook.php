@@ -14,7 +14,7 @@ class DbGenderBook extends Database
     public function getGenderById($idGender)
     {
 
-        $sql_search_gender = "SELECT * FROM genero WHERE id_genero = $idGender";
+        $sql_search_gender = "SELECT * FROM Genero WHERE id_genero = $idGender";
         $queryResult = $this->runSelectQuery($sql_search_gender);
         
         if($queryResult->rowCount() > 0){
@@ -39,7 +39,7 @@ class DbGenderBook extends Database
     public function getGenderByName($genderName)
     {
         $sql_search_gender_by_name = "SELECT * 
-                                      FROM genero
+                                      FROM Genero
                                       WHERE nome_genero = '$genderName'";
 
         $p_sql = $this->runSelectQuery($sql_search_gender_by_name);
@@ -59,7 +59,7 @@ class DbGenderBook extends Database
 
         $name = strtoupper($genderBook->getName());
 
-        $sql_insert_book = "INSERT INTO genero (nome_genero)  
+        $sql_insert_book = "INSERT INTO Genero (nome_genero)  
                             VALUES(:nome_genero);";
 
         $p_sql = $this->connection->prepare($sql_insert_book);
@@ -74,7 +74,7 @@ class DbGenderBook extends Database
 
     public function deleteGender($idGender)
     {
-        $sql_delete_gender = "DELETE FROM genero WHERE genero.id_genero = $idGender";
+        $sql_delete_gender = "DELETE FROM Genero WHERE Genero.id_genero = $idGender";
 
 
         $p_sql = $this->connection->exec($sql_delete_gender);
@@ -85,7 +85,7 @@ class DbGenderBook extends Database
     public function editGender($idGender, $nameGender)
     {
 
-        $sql_update_gender = "UPDATE genero 
+        $sql_update_gender = "UPDATE Genero 
                               SET nome_genero = :nome_genero 
                               WHERE id_genero = :id_genero";
 

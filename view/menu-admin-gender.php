@@ -14,7 +14,7 @@ $genderBooks = $dbg->getAllGender();
 ?>
 
 
-<link rel="stylesheet" href="/LibrarySystem/css/menu-admin.css">
+<link rel="stylesheet" href="/php07/LibrarySystem/css/menu-admin.css">
 
 <div class="row">
     <div class="col"></div>
@@ -61,14 +61,14 @@ $genderBooks = $dbg->getAllGender();
                                 <?php  ?>
                             </div>
                             <div class="container-form-buttons d-flex justify-content-evenly" style="width: 10rem;">
-                                <form method="POST" action="/LibrarySystem/controller/Gender/delete.php?id_genero=<?php echo $row["id_genero"]?>">
+                                <form method="POST" action="/php07/LibrarySystem/controller/Gender/delete.php?id_genero=<?php echo $row["id_genero"]?>">
 
                                     <button type="submit" class="badge bg-danger rounded-pill">
                                         <i class="fa-solid fa-xmark"></i>
                                     </button>
                                 </form>
 
-                                <form method="POST" action="/LibrarySystem/controller/Gender/get.php?id_genero=<?php echo $row["id_genero"]?>">
+                                <form method="POST" action="/php07/LibrarySystem/controller/Gender/get.php?id_genero=<?php echo $row["id_genero"]?>">
                                     <button type="submit" class="badge bg-warning rounded-pill">
                                         <i class="fa-solid fa-pen"></i>
                                     </button>

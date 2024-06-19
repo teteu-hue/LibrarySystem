@@ -17,11 +17,11 @@ if($_GET['id_livro'] > 0)
 
     if($book == NULL)
     {
-        header("Location: /LibrarySystem/index.php");
+        header("Location: /php07/LibrarySystem/index.php");
     } else 
     {
         $db->deleteBook($idBook);
-        header("Location: /LibrarySystem/view/menu-admin-book.php");
+        header("Location: /php07/LibrarySystem/view/menu-admin-book.php");
     }
 }
 }

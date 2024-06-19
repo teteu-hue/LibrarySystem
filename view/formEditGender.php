@@ -27,7 +27,7 @@ require_once("$rootDir/model/Book/DbGenderBook.php");
 
             ?>
 
-            <form method="POST" action="/LibrarySystem/controller/Gender/edit.php?id_genero=<?php echo $gender["id_genero"]; ?>">
+            <form method="POST" action="/php07/LibrarySystem/controller/Gender/edit.php?id_genero=<?php echo $gender["id_genero"]; ?>">
                 <?php 
                 
                 if (!isset($_GET["error"])) 

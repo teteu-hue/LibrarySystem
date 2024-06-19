@@ -11,7 +11,7 @@ if(isset($_GET["id_genero"])){
 
     try 
     {
-       header("Location: /LibrarySystem/view/formEditGender.php?edit=$id_gender");
+       header("Location: /php07/LibrarySystem/view/formEditGender.php?edit=$id_gender");
     } 
     catch(PDOException $e)
     {

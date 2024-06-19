@@ -21,7 +21,7 @@ require_once("$rootDir/model/Book/DbGenderBook.php");
         <div class="col">
 
 
-        <form method="POST" action="/LibrarySystem/controller/Publisher/add.php">
+        <form method="POST" action="/php07/LibrarySystem/controller/Publisher/add.php">
                 <?php if (!isset($_GET["error"])) { ?>
                     <div class="mb-3">
 

@@ -12,15 +12,15 @@ if($_GET["id_editora"] > 0){
     
     if($publisher == NULL)
     {
-        header('Location: /LibrarySystem/index.php');
+        header('Location: /php07/LibrarySystem/index.php');
     } 
     else 
     {
         $dbp->deletePublisher($idPublisher);
-        header('Location: /LibrarySystem/view/menu-admin-publisher.php');
+        header('Location: /php07/LibrarySystem/view/menu-admin-publisher.php');
     }
     
-    header('Location: /LibrarySystem/view/menu-admin-publisher.php');
+    header('Location: /php07/LibrarySystem/view/menu-admin-publisher.php');
 }
 
 unset($dbp);

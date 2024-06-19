@@ -1,5 +1,5 @@
 <?php require_once("header.php") ?>
-<link rel="stylesheet" href="/LibrarySystem/css/menu-admin.css">
+<link rel="stylesheet" href="/php07/LibrarySystem/css/menu-admin.css">
 
 <!-- Content -->
 

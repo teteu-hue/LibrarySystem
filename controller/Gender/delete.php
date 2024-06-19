@@ -13,12 +13,12 @@ if($_GET["id_genero"] > 0){
     
     if($gender == NULL)
     {
-        header('Location: /LibrarySystem/index.php');
+        header('Location: /php07/LibrarySystem/index.php');
     } 
     else 
     {
         $dbg->deleteGender($id_gender);
-        header('Location: /LibrarySystem/view/menu-admin-gender.php');
+        header('Location: /php07/LibrarySystem/view/menu-admin-gender.php');
     }
 }
 

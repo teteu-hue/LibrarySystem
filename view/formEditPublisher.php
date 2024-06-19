@@ -27,7 +27,7 @@ require_once("$rootDir/model/Book/DbPublisherBook.php");
 
             ?>
 
-            <form method="POST" action="/LibrarySystem/controller/Publisher/edit.php?id_editora=<?php echo $publisher["id_editora"] ?>">
+            <form method="POST" action="/php07/LibrarySystem/controller/Publisher/edit.php?id_editora=<?php echo $publisher["id_editora"] ?>">
                 <?php 
                 
                 if (!isset($_GET["error"])) 
